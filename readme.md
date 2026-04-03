@@ -24,32 +24,80 @@ document backed by digilocker verification
 
 🏗️ System Architecture
 High-Level Design
-User Interface (Frontend)
+┌─────────────────────────────────────────────────┐
+│          User Interface (React + Vite)          │
+│         Hosted on Firebase Hosting              │
+└─────────────────┬───────────────────────────────┘
+                  │
+                  ├─────────────────────────────────┐
+                  │                                 │
+                  ▼                                 ▼
+┌─────────────────────────────┐   ┌──────────────────────────────┐
+│   Firebase Services         │   │    n8n Workflows             │
+│   - Authentication          │   │    - Scheme Matching         │
+│   - Firestore Database      │   │    - Data Processing         │
+│   - Cloud Functions         │   │    - Automation Logic        │
+│   - Storage                 │   │    - Webhooks                │
+└─────────────────────────────┘   └──────────────────────────────┘
+                  │
+                  ▼
+┌─────────────────────────────────────────────────┐
+│        Google Cloud Console                     │
+│   - Cloud Functions (Serverless)                │
+│   - Cloud Storage                               │
+│   - APIs & Services                             │
+└─────────────────────────────────────────────────┘
+Data Flow Architecture
+User Fills Form → Submit Profile
         ↓
-API Layer (Backend)
+React App Sends to n8n Webhook
         ↓
-Business Logic (Matching Engine)
+n8n Fetches Schemes from Firestore
         ↓
-Database (Schemes & User Data)
+n8n Runs Matching Algorithm
+        ↓
+Returns Matched Schemes to React
+        ↓
+Display Results to User
+        ↓
+User Saves Scheme → Firestore Update
 Tech Stack We're Using
 Frontend:
 
-React.js - For building interactive UI
+React.js / Vite - For building interactive UI
 Tailwind CSS - For styling
-Axios - For API calls
+Firebase SDK - For real-time data and auth
 
-Backend:
+Backend & Automation:
 
-Node.js + Express - REST API server
-MongoDB - Database for schemes and users
-JWT - User authentication
+Firebase (Backend-as-a-Service)
+
+Firestore - Real-time NoSQL database
+Authentication - User login/signup
+Hosting - Frontend deployment
+
+
+n8n (Workflow Automation)
+
+Automated scheme matching workflows
+Data processing pipelines
+Integration orchestration
+
+
+Google Cloud Console
+
+Cloud Functions - Serverless backend logic
+Cloud Storage - Document/image storage
+APIs & Services management
+
+
 
 Deployment:
 
-Frontend: Vercel/Netlify
-Backend: Railway/Render
-Database: MongoDB Atlas (Cloud)
-
+Frontend: Firebase Hosting
+Backend Logic: Google Cloud Functions
+Automation: n8n (Self-hosted/Cloud)
+Database: Firebase Firestore
 
 📋 24-Hour Hackathon Timeline
 Hour 0-2: Planning & Setup ✅
