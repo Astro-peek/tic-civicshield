@@ -1,10 +1,15 @@
-// src/App.jsx (Update)
+const [detailTab, setDetailTab] = useState('tracker');
 import React, { useState } from "react";
 import LandingPage from "./components/LandingPage";
 import Sidebar from "./components/Sidebar";
 import DashboardHeader from "./components/DashboardHeader";
 import BenefitCounter from "./components/BenefitCounter";
 import SchemeList from "./components/SchemeList";
+import InstalmentLog from "./components/InstalmentLog";
+import OfficerCard from "./components/Officercard";
+import WhatsAppShare from "./components/WhatsAppshare";
+import SchemeTracker from "./components/SchemeTracker";
+
 
 const TAB_META = {
   schemes: { title: "My Schemes", subtitle: "Track all your applications" },
@@ -48,3 +53,29 @@ export default function App() {
     </div>
   );
 }
+
+selectedScheme && (
+  <div style={{ animation: 'fadeUp 0.3s ease-out' }}>
+    <button onClick={() => { setSelectedScheme(null); setDetailTab('tracker'); }} style={{ background: 'none', border: 'none', color: '#4a5580', cursor: 'pointer', marginBottom: '20px', fontWeight: 600 }}>
+       ← Back to My Schemes
+    </button>
+    
+    <div style={{ display: 'flex', gap: 6, marginBottom: '20px', background: '#0a0e1a', padding: '4px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+       {['tracker', 'payments', 'officer', 'share'].map(t => (
+         <button key={t} onClick={() => setDetailTab(t)} style={{ 
+           flex: 1, padding: '10px 4px', fontSize: '10px', fontWeight: 700, textTransform: 'uppercase',
+           background: detailTab === t ? '#141d2e' : 'transparent', 
+           border: detailTab === t ? '1px solid rgba(255,153,51,0.3)' : 'none',
+           color: detailTab === t ? '#ff9933' : '#4a5580', borderRadius: '8px', cursor: 'pointer' 
+         }}>
+           {t}
+         </button>
+       ))}
+    </div>
+
+    {detailTab === 'tracker' && <SchemeTracker schemeId={selectedScheme} />}
+    {detailTab === 'payments' && <InstalmentLog schemeId={selectedScheme} />}
+    {detailTab === 'officer' && <OfficerCard schemeId={selectedScheme} />}
+    {detailTab === 'share' && <WhatsAppShare schemeId={selectedScheme} />}
+  </div>
+)
