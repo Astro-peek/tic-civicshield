@@ -102,59 +102,84 @@ Database: Firebase Firestore
 📋 24-Hour Hackathon Timeline
 Hour 0-2: Planning & Setup ✅
 
- Finalize project idea
+ Finalize project idea and features
  Set up GitHub repository
- Create project structure
- Assign team roles
- Set up development environment
+ Create Firebase project in Google Cloud Console
+ Initialize Firestore database
+ Set up Vite + React project structure
+ Assign team roles and responsibilities
 
-Hour 2-6: Database & Backend Foundation
+Hour 2-5: Firebase & Database Setup
 
- Design database schema
- Set up MongoDB and create collections
- Populate initial scheme data (10-15 schemes)
- Build basic Express server
- Create API endpoints for schemes
+ Configure Firebase Authentication (Email/Password, Google Sign-in)
+ Design Firestore collections structure (schemes, users, matches)
+ Set up Firestore security rules
+ Populate initial scheme data (15-20 government schemes)
+ Create Firebase config file and environment variables
+ Test database connection
 
-Hour 6-10: Core Matching Logic
+Hour 5-9: n8n Workflow Automation
 
- Develop matching algorithm
- Create user profile API
- Implement eligibility checking logic
- Test matching accuracy
- Add filtering and sorting
+ Set up n8n instance (cloud or self-hosted)
+ Create workflow for scheme matching logic
+ Build automated eligibility checker workflow
+ Connect n8n to Firestore via HTTP requests
+ Create webhook endpoints for real-time matching
+ Test n8n workflows with sample data
 
-Hour 10-14: Frontend Development
+Hour 9-13: Frontend Development (Core Pages)
 
- Create landing page
- Build user questionnaire form
- Design results display page
- Create scheme detail view
- Add responsive design
+ Create landing page with hero section
+ Build multi-step questionnaire form
+ Design scheme results/matching page
+ Create individual scheme detail view
+ Add loading states and animations
+ Implement responsive design (mobile-first)
 
-Hour 14-18: Integration & Features
+Hour 13-16: Firebase Integration & Authentication
 
- Connect frontend to backend
- Implement user authentication
- Add search and filter options
- Create user dashboard
- Test all user flows
+ Integrate Firebase Auth in React app
+ Create login/signup pages
+ Implement protected routes
+ Build user profile page
+ Add real-time Firestore data fetching
+ Test authentication flow
 
-Hour 18-22: Polish & Testing
+Hour 16-19: Core Features & Matching Logic
 
- Fix bugs and errors
- Improve UI/UX
- Add loading states and error handling
- Test on different devices
- Optimize performance
+ Implement client-side matching algorithm
+ Connect to n8n workflows via webhooks
+ Add search and filter functionality
+ Create "Save Scheme" feature with Firestore
+ Build user dashboard with saved schemes
+ Add match percentage calculation
 
-Hour 22-24: Deployment & Documentation
+Hour 19-21: Google Cloud Functions (If Needed)
 
- Deploy backend to cloud
- Deploy frontend to hosting
- Record demo video
- Complete README documentation
+ Create Cloud Function for complex matching logic
+ Set up Cloud Function triggers (Firestore/HTTP)
+ Deploy functions to Google Cloud
+ Test serverless functions
+ Optimize for performance
+
+Hour 21-23: Testing, Polish & Bug Fixes
+
+ Fix all critical bugs
+ Improve UI/UX based on user flow testing
+ Add error handling and validation
+ Test on multiple devices and browsers
+ Optimize load times and performance
+ Add analytics (Firebase Analytics)
+
+Hour 23-24: Deployment & Final Documentation
+
+ Deploy frontend to Firebase Hosting
+ Verify all n8n workflows are running
+ Test production build thoroughly
+ Record 2-3 minute demo video
+ Update README with screenshots and demo link
  Prepare presentation slides
+ Final GitHub commit and push
 
 
 🎨 Key Features
@@ -198,4 +223,82 @@ Search schemes by name
 Filter by category (education, health, agriculture, etc.)
 Filter by benefit type
 Sort by relevance
+
+javascript{
+  id: "scheme_001", // Document ID
+  name: "PM-KISAN Samman Nidhi",
+  category: "agriculture", // "education", "health", "agriculture", "business", etc.
+  description: "Income support to farmer families",
+  benefits: "₹6000 per year in 3 installments",
+  eligibility: {
+    minAge: 18,
+    maxAge: null,
+    gender: ["all"],
+    income: {
+      max: null,
+      min: null
+    },
+    category: ["all"], // ["SC", "ST", "OBC", "General", "all"]
+    states: ["all"], // or specific states
+    occupation: ["farmer", "agriculture"],
+    landOwnership: true
+  },
+  documents: [
+    "Aadhaar Card",
+    "Bank Account Details",
+    "Land Ownership Papers"
+  ],
+  applicationProcess: "Apply through PM-KISAN portal or local agriculture office",
+  officialLink: "https://pmkisan.gov.in/",
+  matchScore: 0, // calculated dynamically
+  createdAt: Timestamp,
+  updatedAt: Timestamp
+}
+users Collection
+javascript{
+  uid: "firebase_user_id", // Document ID (from Firebase Auth)
+  email: "user@example.com",
+  displayName: "User Name",
+  profile: {
+    age: 25,
+    gender: "male", // "male", "female", "other"
+    state: "Madhya Pradesh",
+    district: "Indore",
+    income: 150000, // annual income
+    category: "General", // "SC", "ST", "OBC", "General"
+    occupation: "student", // "student", "farmer", "business", "employed", "unemployed"
+    education: "graduate",
+    maritalStatus: "single",
+    hasDisability: false,
+    interests: ["education", "health"] // what schemes they're looking for
+  },
+  savedSchemes: [
+    "scheme_001",
+    "scheme_005"
+  ], // Array of scheme IDs
+  appliedSchemes: [
+    {
+      schemeId: "scheme_001",
+      appliedOn: Timestamp,
+      status: "pending" // "pending", "approved", "rejected"
+    }
+  ],
+  createdAt: Timestamp,
+  lastLogin: Timestamp
+}
+matches Collection (Optional - for caching)
+javascript{
+  id: "match_uid_timestamp", // Document ID
+  userId: "firebase_user_id",
+  schemes: [
+    {
+      schemeId: "scheme_001",
+      matchScore: 95,
+      matchedCriteria: ["age", "occupation", "state"],
+      eligibleFor: true
+    }
+  ],
+  generatedAt: Timestamp,
+  expiresAt: Timestamp // cache for 24 hours
+}
 
