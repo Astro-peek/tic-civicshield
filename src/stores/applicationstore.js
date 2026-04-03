@@ -19,6 +19,25 @@ export function addAppliedScheme(appData) {
 }
 
 export function updateApplicationStage(id, stage) {
-  // Logic to move the tracker (Coming in Task 9)
+
   emit();
 }
+
+
+export const getTimelines = () => ({
+  'PM-KISAN-2024-001': {
+    applied:  { completedDate: '2024-03-01' },
+    verified: { expectedDate: '2024-03-15' },
+    approved: { expectedDate: '2024-04-01' },
+    disbursed: { expectedDate: '2024-04-15' },
+  }
+});
+
+export const getDocuments = () => ({
+  'PM-KISAN-2024-001': [
+    { id: 'd1', name: 'Aadhaar Card', status: 'submitted' },
+    { id: 'd2', name: 'Land Records', status: 'pending' },
+  ]
+});
+
+export const getDynActiveStageIndex = (id) => 0; 
