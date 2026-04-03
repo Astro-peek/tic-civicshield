@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "civicshield-bot",
+  "private_key_id": "188bb587560e31a5f97a9a9a491bb334318784ab",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLUY2UfAvLbI4w\njt63q0el1J02uxV2aLAdBCchFlfOHdrfbFpAKXtT9HU3cCOjo33HuFZRG3iXImKT\ngTYfbemIRxLRGCPZ1cqNCGIXqCYY8Iyy+qYpjhdyN22M0C/RPhTPBrXfFqUSYNWK\neB1fuXNQ3JmSC5OaMJsaxlQquS16HCyrvG/MRYa1EVB5OCLaXRvLkw2QLmvoqQ57\n3UwFEswENS3EhSfa69okvQNJlvTlB+3QRUxgT04XYBJUAkQZbhKMpWq5tiB2OrX8\niu6k3RWEUfJCXXEVk5ZfwdIe5IBWuqvSziaKuRwp9B53mX0qh35dk15CCwRhnCqw\nzEHr0qgbAgMBAAECggEAHz/8q9rZET4xKKN89ev8ii+Arn3Y0adLklomDX7aphKO\nppKH2J7HluLW9VtmDuu9FGpv0e2P/mLJlfRhNjl1kH2kFcFJGV0z0bN9KDevC1xF\ns+i0i2SMlACS9Pa2ssmA90UHxS881fNOPwcxNJpTcBVIAVuIJ0XbQSVEoIBvzfmq\nfRfFGHWK+PX0vBj2TSZbMLTcLt6LwUVrnIM0ZuRAuP3CHsOrLcmiIzTMzndTYjT4\nttHRS1DPV43SMoZWOCVPymFdqOLKt+hHZVmF/WwvkmrKXkjIeruI6hWTDEqfuwZO\nvRVPoaopnoawqwQth4+E+cVB82WMkzuATsiKJbHQ2QKBgQDmrPjnJZbpG02J1T67\ntnJWSh/kHw+AUC03cnZUR7Zp1AuTLqItpVRJNC/e2a4lRheNYe0UQ3BwrjGxdHBF\nqfZ+cVmDjVepMH5KBi7u49X+EyV3ZAsIPPBPofCLCDEv6Fo+Uiws65VPjB0XWALP\nUkToG9UYF9O088iU++sBEylrbwKBgQDho7j7ZEICNCjU5Y0giTpV6LulkrM/q97b\nlm6LHaPB144xBqFvVUNlNJZkk5aF1D/gCtvc/52o+LfNAMyBJ7vk7rctLw0s0M3Z\nLYLF3HiKu3N30Ro/4/Jmi27/HkhEkk/QDMRROdfNg5Q1TxeXxCfwXoGq6qrLWwSR\n9qGKfdSoFQKBgQCEtpWJHvZA7OViXF54TtJfVMweScR4VSh+kwsDGDMZldaG+jhy\nPIFOkIjOFLz9UuMwA1wL4XTqTz3l05DYc52OR5Zxejsp6u1tlzsfU9OFFuziUJuM\nRMsZdZjX1IHAB1UML+ice3lux7Tg/lC3iKR+Sa0C7IpvvCX1mS4ucyDMXwKBgQCy\nBvdggc4C5xyAPU2IKj24opPLI2ACEJ0ZLCuz34Lg4i3ySIT+zosKQt+WI0xT8w8i\nue6XA6dlNjfuq36vOKZrDl3AbKs8fNKtU9cmPblt3FBSbM0FM9iBR+ofp8jlMXt/\nb1NFsxmtsO8y0GCRAddxM1+jdtui7wFAGRODrZwnsQKBgCWTBOKD/a2ih1VEJJt2\ndYM0WfVW5uAQDXWG199LOUzEQ7za1TiIGsP0N8Y81UfjS/khvN4i12K7oz7k7zg+\nHr2TxZgXbmksgTaDIh8yQRD0ozY51JvK0fP+LdM6GBO/ieG7ZmtyEvZoUfzavqak\na3fiWudFm6u8IaGFteON3f5U\n-----END PRIVATE KEY-----\n",
+  "client_email": "civicshield@civicshield-bot.iam.gserviceaccount.com",
+  "client_id": "105378768465620572809",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/civicshield%40civicshield-bot.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

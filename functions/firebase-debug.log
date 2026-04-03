@@ -1,0 +1,1084 @@
+[debug] [2026-03-31T19:46:35.432Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T19:46:35.437Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T19:46:35.438Z] CLI Version:   15.12.0
+[debug] [2026-03-31T19:46:35.438Z] Platform:      win32
+[debug] [2026-03-31T19:46:35.438Z] Node Version:  v24.14.0
+[debug] [2026-03-31T19:46:35.439Z] Time:          Wed Apr 01 2026 01:16:35 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T19:46:35.439Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T19:46:39.501Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T19:46:39.502Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T19:46:39.502Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T19:46:39.505Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:39.505Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:39.507Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T19:46:39.507Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:46:39.507Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T19:46:41.311Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T19:46:41.312Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T19:46:41.312Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:41.312Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:41.312Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T19:46:41.312Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T19:46:43.083Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T19:46:43.083Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T19:46:43.092Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:43.092Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:43.092Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T19:46:44.970Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T19:46:44.970Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IIfe+9DzypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T19:46:44.975Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:44.976Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:44.976Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T19:46:44.976Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T19:46:45.550Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T19:46:45.550Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T19:46:45.554Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:45.554Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:45.554Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T19:46:45.956Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T19:46:45.957Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2026-03-31T19:46:45.961Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:45.961Z] Checked if tokens are valid: true, expires at: 1774989305444
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T19:46:45.963Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:45.963Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:45.963Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com [none]
+[debug] [2026-03-31T19:46:45.963Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:46:45.965Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com [none]
+[debug] [2026-03-31T19:46:45.966Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:46:47.901Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com 200
+[debug] [2026-03-31T19:46:47.901Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com [omitted]
+[warn] !  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2026-03-31T19:46:47.903Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:47.903Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:47.903Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2026-03-31T19:46:47.903Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com:enable  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:46:47.910Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com 200
+[debug] [2026-03-31T19:46:47.910Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com [omitted]
+[warn] !  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2026-03-31T19:46:47.911Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:47.912Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:47.912Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2026-03-31T19:46:47.912Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com:enable  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:46:48.597Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com:enable 200
+[debug] [2026-03-31T19:46:48.598Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2026-03-31T19:46:49.785Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com:enable 200
+[debug] [2026-03-31T19:46:49.785Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2026-03-31T19:46:59.825Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:59.826Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:46:59.826Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T19:47:00.530Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T19:47:00.530Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T19:47:00.531Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:00.531Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:00.531Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T19:47:01.177Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T19:47:01.177Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T19:47:01.181Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T19:47:03.487Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T19:47:03.487Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T19:47:03.489Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T19:47:03.513Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8435
+
+[debug] [2026-03-31T19:47:08.760Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T19:47:12.856Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:12.856Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:12.857Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com [none]
+[debug] [2026-03-31T19:47:12.857Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:47:14.627Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com 200
+[debug] [2026-03-31T19:47:14.627Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com [omitted]
+[warn] !  extensions: missing required API firebaseextensions.googleapis.com. Enabling now... 
+[debug] [2026-03-31T19:47:14.628Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:14.628Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:14.628Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com:enable [none]
+[debug] [2026-03-31T19:47:14.628Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com:enable  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:47:16.574Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com:enable 200
+[debug] [2026-03-31T19:47:16.575Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/civicshield-c634c/services/firebaseextensions.googleapis.com:enable [omitted]
+[debug] [2026-03-31T19:47:26.599Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T19:47:26.600Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T19:47:26.600Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T19:47:26.600Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:26.601Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:26.601Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T19:47:26.601Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T19:47:26.601Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T19:47:28.249Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T19:47:28.250Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T19:47:28.250Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:28.250Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T19:47:28.250Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T19:47:31.336Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T19:47:31.337Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[error] Error: Failed to load environment variables from .env.:
+[error] - FirebaseError Invalid dotenv file, error on lines: "project_id": "civicshield-bot",,"private_key_id": "188bb587560e31a5f97a9a9a491bb334318784ab",,"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLUY2UfAvLbI4w\njt63q0el1J02uxV2aLAdBCchFlfOHdrfbFpAKXtT9HU3cCOjo33HuFZRG3iXImKT\ngTYfbemIRxLRGCPZ1cqNCGIXqCYY8Iyy+qYpjhdyN22M0C/RPhTPBrXfFqUSYNWK\neB1fuXNQ3JmSC5OaMJsaxlQquS16HCyrvG/MRYa1EVB5OCLaXRvLkw2QLmvoqQ57\n3UwFEswENS3EhSfa69okvQNJlvTlB+3QRUxgT04XYBJUAkQZbhKMpWq5tiB2OrX8\niu6k3RWEUfJCXXEVk5ZfwdIe5IBWuqvSziaKuRwp9B53mX0qh35dk15CCwRhnCqw\nzEHr0qgbAgMBAAECggEAHz/8q9rZET4xKKN89ev8ii+Arn3Y0adLklomDX7aphKO\nppKH2J7HluLW9VtmDuu9FGpv0e2P/mLJlfRhNjl1kH2kFcFJGV0z0bN9KDevC1xF\ns+i0i2SMlACS9Pa2ssmA90UHxS881fNOPwcxNJpTcBVIAVuIJ0XbQSVEoIBvzfmq\nfRfFGHWK+PX0vBj2TSZbMLTcLt6LwUVrnIM0ZuRAuP3CHsOrLcmiIzTMzndTYjT4\nttHRS1DPV43SMoZWOCVPymFdqOLKt+hHZVmF/WwvkmrKXkjIeruI6hWTDEqfuwZO\nvRVPoaopnoawqwQth4+E+cVB82WMkzuATsiKJbHQ2QKBgQDmrPjnJZbpG02J1T67\ntnJWSh/kHw+AUC03cnZUR7Zp1AuTLqItpVRJNC/e2a4lRheNYe0UQ3BwrjGxdHBF\nqfZ+cVmDjVepMH5KBi7u49X+EyV3ZAsIPPBPofCLCDEv6Fo+Uiws65VPjB0XWALP\nUkToG9UYF9O088iU++sBEylrbwKBgQDho7j7ZEICNCjU5Y0giTpV6LulkrM/q97b\nlm6LHaPB144xBqFvVUNlNJZkk5aF1D/gCtvc/52o+LfNAMyBJ7vk7rctLw0s0M3Z\nLYLF3HiKu3N30Ro/4/Jmi27/HkhEkk/QDMRROdfNg5Q1TxeXxCfwXoGq6qrLWwSR\n9qGKfdSoFQKBgQCEtpWJHvZA7OViXF54TtJfVMweScR4VSh+kwsDGDMZldaG+jhy\nPIFOkIjOFLz9UuMwA1wL4XTqTz3l05DYc52OR5Zxejsp6u1tlzsfU9OFFuziUJuM\nRMsZdZjX1IHAB1UML+ice3lux7Tg/lC3iKR+Sa0C7IpvvCX1mS4ucyDMXwKBgQCy\nBvdggc4C5xyAPU2IKj24opPLI2ACEJ0ZLCuz34Lg4i3ySIT+zosKQt+WI0xT8w8i\nue6XA6dlNjfuq36vOKZrDl3AbKs8fNKtU9cmPblt3FBSbM0FM9iBR+ofp8jlMXt/\nb1NFsxmtsO8y0GCRAddxM1+jdtui7wFAGRODrZwnsQKBgCWTBOKD/a2ih1VEJJt2\ndYM0WfVW5uAQDXWG199LOUzEQ7za1TiIGsP0N8Y81UfjS/khvN4i12K7oz7k7zg+\nHr2TxZgXbmksgTaDIh8yQRD0ozY51JvK0fP+LdM6GBO/ieG7ZmtyEvZoUfzavqak\na3fiWudFm6u8IaGFteON3f5U\n-----END PRIVATE KEY-----\n",,"client_email": "civicshield@civicshield-bot.iam.gserviceaccount.com",,"client_id": "105378768465620572809",,"auth_uri": "https://accounts.google.com/o/oauth2/auth",,"token_uri": "https://oauth2.googleapis.com/token",,"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",,"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/civicshield%40civicshield-bot.iam.gserviceaccount.com",,"universe_domain": "googleapis.com"}
+[debug] [2026-03-31T20:04:07.101Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T20:04:07.106Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T20:04:07.107Z] CLI Version:   15.12.0
+[debug] [2026-03-31T20:04:07.107Z] Platform:      win32
+[debug] [2026-03-31T20:04:07.107Z] Node Version:  v24.14.0
+[debug] [2026-03-31T20:04:07.107Z] Time:          Wed Apr 01 2026 01:34:07 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T20:04:07.107Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T20:04:11.269Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:04:11.269Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:04:11.270Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T20:04:11.273Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:11.273Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:11.275Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:04:11.275Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:04:11.275Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:04:16.005Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:04:16.005Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:04:16.006Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:16.006Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:16.006Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T20:04:16.006Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T20:04:17.796Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T20:04:17.796Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T20:04:17.805Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:17.805Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:17.806Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:04:19.866Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:04:19.867Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IKPz+sf3ypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T20:04:19.875Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:19.875Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:19.875Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T20:04:19.876Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T20:04:21.606Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T20:04:21.606Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T20:04:21.611Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:21.612Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:21.612Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:04:23.200Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:04:23.201Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T20:04:23.208Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:23.208Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:23.208Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T20:04:23.939Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T20:04:23.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T20:04:23.940Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:23.940Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:23.940Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T20:04:25.490Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T20:04:25.490Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T20:04:25.493Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T20:04:28.112Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T20:04:28.113Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T20:04:28.116Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T20:04:28.141Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8307
+
+[debug] [2026-03-31T20:04:31.193Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T20:04:35.296Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:04:35.297Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:04:35.297Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T20:04:35.297Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:35.297Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:35.297Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:04:35.297Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:04:35.297Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:04:36.961Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:04:36.961Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:04:36.962Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:36.962Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:04:36.968Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T20:04:38.766Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T20:04:38.766Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[error] Error: Failed to load environment variables from .env.:
+[error] - FirebaseError Invalid dotenv file, error on lines: "project_id": "civicshield-bot",,"private_key_id": "188bb587560e31a5f97a9a9a491bb334318784ab",,"private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDLUY2UfAvLbI4w\njt63q0el1J02uxV2aLAdBCchFlfOHdrfbFpAKXtT9HU3cCOjo33HuFZRG3iXImKT\ngTYfbemIRxLRGCPZ1cqNCGIXqCYY8Iyy+qYpjhdyN22M0C/RPhTPBrXfFqUSYNWK\neB1fuXNQ3JmSC5OaMJsaxlQquS16HCyrvG/MRYa1EVB5OCLaXRvLkw2QLmvoqQ57\n3UwFEswENS3EhSfa69okvQNJlvTlB+3QRUxgT04XYBJUAkQZbhKMpWq5tiB2OrX8\niu6k3RWEUfJCXXEVk5ZfwdIe5IBWuqvSziaKuRwp9B53mX0qh35dk15CCwRhnCqw\nzEHr0qgbAgMBAAECggEAHz/8q9rZET4xKKN89ev8ii+Arn3Y0adLklomDX7aphKO\nppKH2J7HluLW9VtmDuu9FGpv0e2P/mLJlfRhNjl1kH2kFcFJGV0z0bN9KDevC1xF\ns+i0i2SMlACS9Pa2ssmA90UHxS881fNOPwcxNJpTcBVIAVuIJ0XbQSVEoIBvzfmq\nfRfFGHWK+PX0vBj2TSZbMLTcLt6LwUVrnIM0ZuRAuP3CHsOrLcmiIzTMzndTYjT4\nttHRS1DPV43SMoZWOCVPymFdqOLKt+hHZVmF/WwvkmrKXkjIeruI6hWTDEqfuwZO\nvRVPoaopnoawqwQth4+E+cVB82WMkzuATsiKJbHQ2QKBgQDmrPjnJZbpG02J1T67\ntnJWSh/kHw+AUC03cnZUR7Zp1AuTLqItpVRJNC/e2a4lRheNYe0UQ3BwrjGxdHBF\nqfZ+cVmDjVepMH5KBi7u49X+EyV3ZAsIPPBPofCLCDEv6Fo+Uiws65VPjB0XWALP\nUkToG9UYF9O088iU++sBEylrbwKBgQDho7j7ZEICNCjU5Y0giTpV6LulkrM/q97b\nlm6LHaPB144xBqFvVUNlNJZkk5aF1D/gCtvc/52o+LfNAMyBJ7vk7rctLw0s0M3Z\nLYLF3HiKu3N30Ro/4/Jmi27/HkhEkk/QDMRROdfNg5Q1TxeXxCfwXoGq6qrLWwSR\n9qGKfdSoFQKBgQCEtpWJHvZA7OViXF54TtJfVMweScR4VSh+kwsDGDMZldaG+jhy\nPIFOkIjOFLz9UuMwA1wL4XTqTz3l05DYc52OR5Zxejsp6u1tlzsfU9OFFuziUJuM\nRMsZdZjX1IHAB1UML+ice3lux7Tg/lC3iKR+Sa0C7IpvvCX1mS4ucyDMXwKBgQCy\nBvdggc4C5xyAPU2IKj24opPLI2ACEJ0ZLCuz34Lg4i3ySIT+zosKQt+WI0xT8w8i\nue6XA6dlNjfuq36vOKZrDl3AbKs8fNKtU9cmPblt3FBSbM0FM9iBR+ofp8jlMXt/\nb1NFsxmtsO8y0GCRAddxM1+jdtui7wFAGRODrZwnsQKBgCWTBOKD/a2ih1VEJJt2\ndYM0WfVW5uAQDXWG199LOUzEQ7za1TiIGsP0N8Y81UfjS/khvN4i12K7oz7k7zg+\nHr2TxZgXbmksgTaDIh8yQRD0ozY51JvK0fP+LdM6GBO/ieG7ZmtyEvZoUfzavqak\na3fiWudFm6u8IaGFteON3f5U\n-----END PRIVATE KEY-----\n",,"client_email": "civicshield@civicshield-bot.iam.gserviceaccount.com",,"client_id": "105378768465620572809",,"auth_uri": "https://accounts.google.com/o/oauth2/auth",,"token_uri": "https://oauth2.googleapis.com/token",,"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",,"client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/civicshield%40civicshield-bot.iam.gserviceaccount.com",,"universe_domain": "googleapis.com"}
+[debug] [2026-03-31T20:11:48.124Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T20:11:48.128Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T20:11:48.129Z] CLI Version:   15.12.0
+[debug] [2026-03-31T20:11:48.129Z] Platform:      win32
+[debug] [2026-03-31T20:11:48.129Z] Node Version:  v24.14.0
+[debug] [2026-03-31T20:11:48.130Z] Time:          Wed Apr 01 2026 01:41:48 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T20:11:48.130Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T20:11:51.202Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:11:51.203Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:11:51.203Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T20:11:51.206Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:51.207Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:51.209Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:11:51.210Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:11:51.210Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:11:52.990Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:11:52.991Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:11:52.991Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:52.992Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:52.992Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T20:11:52.992Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T20:11:54.795Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T20:11:54.796Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T20:11:54.821Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:54.821Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:54.822Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:11:56.783Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:11:56.784Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IIeF56H5ypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T20:11:56.788Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:56.789Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:56.789Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T20:11:56.789Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T20:11:58.388Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T20:11:58.389Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T20:11:58.392Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:58.392Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:11:58.392Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:12:00.076Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:12:00.076Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T20:12:00.096Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:00.096Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:00.097Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T20:12:00.634Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T20:12:00.635Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T20:12:00.636Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:00.636Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:00.637Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T20:12:01.320Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T20:12:01.320Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T20:12:01.323Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T20:12:03.317Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T20:12:03.318Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T20:12:03.321Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T20:12:03.342Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8856
+
+[debug] [2026-03-31T20:12:06.268Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T20:12:10.372Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:12:10.373Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:12:10.373Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T20:12:10.373Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:10.373Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:10.373Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:12:10.373Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:12:10.373Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:12:12.032Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:12:12.032Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:12:12.033Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:12.033Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:12:12.033Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T20:12:13.878Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T20:12:13.879Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[debug] [2026-03-31T20:12:13.881Z] Failed to validate key FIREBASE_PROJECT_ID: Error: Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:12:13.881Z] Failed to validate key FUNCTION_REGION: Error: Key FUNCTION_REGION is reserved for internal use.
+[debug] [2026-03-31T20:12:13.881Z] Failed to validate key FIREBASE_CLIENT_EMAIL: Error: Key FIREBASE_CLIENT_EMAIL starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:12:13.882Z] Failed to validate key FIREBASE_PRIVATE_KEY: Error: Key FIREBASE_PRIVATE_KEY starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] Error: Failed to load environment variables from .env.:
+[error] - Error Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] - Error Key FUNCTION_REGION is reserved for internal use.
+[error] - Error Key FIREBASE_CLIENT_EMAIL starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] - Error Key FIREBASE_PRIVATE_KEY starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:19:50.992Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T20:19:51.003Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T20:19:51.004Z] CLI Version:   15.12.0
+[debug] [2026-03-31T20:19:51.004Z] Platform:      win32
+[debug] [2026-03-31T20:19:51.005Z] Node Version:  v24.14.0
+[debug] [2026-03-31T20:19:51.005Z] Time:          Wed Apr 01 2026 01:49:51 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T20:19:51.005Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T20:19:56.047Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:19:56.048Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:19:56.048Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T20:19:56.053Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:56.054Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:56.056Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:19:56.056Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:19:56.056Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:19:57.896Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:19:57.897Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:19:57.898Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:57.899Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:57.899Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T20:19:57.899Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T20:19:59.766Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T20:19:59.766Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T20:19:59.780Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:59.780Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:19:59.781Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:20:01.801Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:20:01.801Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IIzzjIn7ypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T20:20:01.835Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:01.835Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:01.835Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T20:20:01.835Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T20:20:03.561Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T20:20:03.562Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T20:20:03.570Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:03.571Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:03.572Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:20:05.219Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:20:05.220Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T20:20:05.227Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:05.228Z] Checked if tokens are valid: true, expires at: 1774989305444
+[debug] [2026-03-31T20:20:05.228Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T20:20:05.712Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T20:20:05.713Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T20:20:05.713Z] Checked if tokens are valid: false, expires at: 1774989305444
+[debug] [2026-03-31T20:20:05.714Z] Checked if tokens are valid: false, expires at: 1774989305444
+[debug] [2026-03-31T20:20:05.714Z] > refreshing access token with scopes: []
+[debug] [2026-03-31T20:20:05.719Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-03-31T20:20:05.719Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-31T20:20:05.917Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-03-31T20:20:05.917Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-03-31T20:20:05.959Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T20:20:06.567Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T20:20:06.567Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T20:20:06.571Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T20:20:08.936Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T20:20:08.936Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T20:20:08.939Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T20:20:08.963Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8553
+
+[debug] [2026-03-31T20:20:12.644Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T20:20:16.763Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:20:16.764Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:20:16.764Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T20:20:16.764Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:16.764Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:16.764Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:20:16.765Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:20:16.765Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:20:18.450Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:20:18.450Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:20:18.451Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:18.452Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:18.471Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T20:20:20.278Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T20:20:20.279Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[debug] [2026-03-31T20:20:20.282Z] Failed to validate key FIREBASE_PROJECT_ID: Error: Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:20:20.282Z] Failed to validate key FUNCTION_REGION: Error: Key FUNCTION_REGION is reserved for internal use.
+[debug] [2026-03-31T20:20:20.282Z] Failed to validate key FIREBASE_CLIENT_EMAIL: Error: Key FIREBASE_CLIENT_EMAIL starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:20:20.282Z] Failed to validate key FIREBASE_PRIVATE_KEY: Error: Key FIREBASE_PRIVATE_KEY starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] Error: Failed to load environment variables from .env.:
+[error] - Error Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] - Error Key FUNCTION_REGION is reserved for internal use.
+[error] - Error Key FIREBASE_CLIENT_EMAIL starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] - Error Key FIREBASE_PRIVATE_KEY starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:20:51.715Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T20:20:51.720Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T20:20:51.721Z] CLI Version:   15.12.0
+[debug] [2026-03-31T20:20:51.721Z] Platform:      win32
+[debug] [2026-03-31T20:20:51.721Z] Node Version:  v24.14.0
+[debug] [2026-03-31T20:20:51.722Z] Time:          Wed Apr 01 2026 01:50:51 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T20:20:51.722Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T20:20:55.174Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:20:55.175Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:20:55.176Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T20:20:55.178Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:55.179Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:55.181Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:20:55.181Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:20:55.181Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:20:56.869Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:20:56.870Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:20:56.871Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:56.871Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:56.871Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T20:20:56.871Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T20:20:58.579Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T20:20:58.579Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T20:20:58.595Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:58.595Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:20:58.595Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:21:00.523Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:21:00.524Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IMrRiqX7ypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T20:21:00.536Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:00.537Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:00.537Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T20:21:00.537Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T20:21:01.226Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T20:21:01.227Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T20:21:01.232Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:01.232Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:01.233Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:21:01.599Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:21:01.600Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T20:21:01.608Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:01.609Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:01.609Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T20:21:02.262Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T20:21:02.262Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T20:21:02.263Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:02.263Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:02.264Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T20:21:02.733Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T20:21:02.733Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T20:21:02.736Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T20:21:04.782Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T20:21:04.783Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T20:21:04.788Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T20:21:04.828Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8660
+
+[debug] [2026-03-31T20:21:08.183Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T20:21:12.313Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:21:12.313Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:21:12.313Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T20:21:12.314Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:12.314Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:12.314Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:21:12.314Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:21:12.314Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:21:13.895Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:21:13.896Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:21:13.897Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:13.897Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:21:13.898Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T20:21:15.592Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T20:21:15.592Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[debug] [2026-03-31T20:21:15.595Z] Failed to validate key FIREBASE_PROJECT_ID: Error: Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[debug] [2026-03-31T20:21:15.595Z] Failed to validate key FUNCTION_REGION: Error: Key FUNCTION_REGION is reserved for internal use.
+[error] Error: Failed to load environment variables from .env.:
+[error] - Error Key FIREBASE_PROJECT_ID starts with a reserved prefix (X_GOOGLE_ FIREBASE_ EXT_)
+[error] - Error Key FUNCTION_REGION is reserved for internal use.
+[debug] [2026-03-31T20:30:45.193Z] ----------------------------------------------------------------------
+[debug] [2026-03-31T20:30:45.198Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions,firestore
+[debug] [2026-03-31T20:30:45.199Z] CLI Version:   15.12.0
+[debug] [2026-03-31T20:30:45.199Z] Platform:      win32
+[debug] [2026-03-31T20:30:45.199Z] Node Version:  v24.14.0
+[debug] [2026-03-31T20:30:45.200Z] Time:          Wed Apr 01 2026 02:00:45 GMT+0530 (India Standard Time)
+[debug] [2026-03-31T20:30:45.200Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-31T20:30:48.745Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:30:48.746Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:30:48.746Z] [iam] checking project civicshield-c634c for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2026-03-31T20:30:48.749Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:48.749Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:48.751Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:30:48.751Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:30:48.751Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:30:50.446Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:30:50.446Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2026-03-31T20:30:50.447Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:50.448Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:50.448Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-03-31T20:30:50.448Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-03-31T20:30:52.522Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-03-31T20:30:52.523Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/civicshield-c634c/serviceAccounts/civicshield-c634c@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'civicshield-c634c'...
+[info] 
+[info] i  deploying firestore, functions 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[info] i  firestore: ensuring required API firestore.googleapis.com is enabled... 
+[debug] [2026-03-31T20:30:52.536Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:52.536Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:52.536Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:30:54.370Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:30:54.370Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IOa0n8D9ypMDMIW0+o3xypMD"}
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2026-03-31T20:30:54.378Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:54.378Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:54.379Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [none]
+[debug] [2026-03-31T20:30:54.379Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test [omitted]
+[debug] [2026-03-31T20:30:55.995Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test 200
+[debug] [2026-03-31T20:30:55.995Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2026-03-31T20:30:55.998Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:55.998Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:55.998Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:30:57.572Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:30:57.572Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-03-31T20:30:57.581Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:57.581Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:57.581Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig [none]
+[debug] [2026-03-31T20:30:58.087Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig 200
+[debug] [2026-03-31T20:30:58.087Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/civicshield-c634c/adminSdkConfig {"projectId":"civicshield-c634c","databaseURL":"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"civicshield-c634c.firebasestorage.app"}
+[debug] [2026-03-31T20:30:58.088Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:58.088Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:30:58.089Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs [none]
+[debug] [2026-03-31T20:30:58.690Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs 200
+[debug] [2026-03-31T20:30:58.690Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/civicshield-c634c/configs {}
+[debug] [2026-03-31T20:30:58.694Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 20 will be deprecated on 2026-04-30 and will be decommissioned on 2026-10-30, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[warn] !  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[warn] !  functions: Please note that there will be breaking changes when you upgrade. 
+[debug] [2026-03-31T20:31:01.452Z] > [functions] package.json contents: {
+  "name": "schematch-backend-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "start": "node src/local.js",
+    "serve": "firebase emulators:start --only functions,firestore,auth",
+    "deploy": "firebase deploy --only functions,firestore",
+    "seed:schemes": "node src/scripts/seedSchemes.js",
+    "set-admin": "node src/scripts/setAdminClaim.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.4.0",
+    "firebase-functions": "^5.0.1",
+    "googleapis": "^140.0.0"
+  }
+}
+[debug] [2026-03-31T20:31:01.453Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-03-31T20:31:01.458Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-03-31T20:31:01.494Z] Found firebase-functions binary at 'C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8830
+
+[debug] [2026-03-31T20:31:04.767Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":512,"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["asia-south1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2026-03-31T20:31:08.897Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-31T20:31:08.898Z] > authorizing via signed-in user (teamashish2005@gmail.com)
+[debug] [2026-03-31T20:31:08.898Z] [iam] checking project civicshield-c634c for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2026-03-31T20:31:08.898Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:08.898Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:08.899Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:31:08.899Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:31:08.899Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:31:10.440Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:31:10.440Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2026-03-31T20:31:10.441Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:10.441Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:10.441Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances pageSize=100&pageToken=
+[debug] [2026-03-31T20:31:12.219Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances 200
+[debug] [2026-03-31T20:31:12.220Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/civicshield-c634c/instances {}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\Ashish\Downloads\files (1)\schematch\final schemematch\functions (50.51 KB) for uploading 
+[debug] [2026-03-31T20:31:12.500Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:12.501Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:12.502Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/civicshield-c634c/locations/-/functions [none]
+[debug] [2026-03-31T20:31:13.517Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/civicshield-c634c/locations/-/functions 200
+[debug] [2026-03-31T20:31:13.517Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/civicshield-c634c/locations/-/functions {}
+[debug] [2026-03-31T20:31:13.518Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:13.519Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:13.519Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-03-31T20:31:15.194Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/-/functions 200
+[debug] [2026-03-31T20:31:15.194Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/-/functions {}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2026-03-31T20:31:15.199Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:15.199Z] Checked if tokens are valid: true, expires at: 1774992004918
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2026-03-31T20:31:15.201Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:15.201Z] Checked if tokens are valid: true, expires at: 1774992004918
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2026-03-31T20:31:15.203Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:15.203Z] Checked if tokens are valid: true, expires at: 1774992004918
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2026-03-31T20:31:15.205Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:15.205Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:15.206Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com [none]
+[debug] [2026-03-31T20:31:15.206Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:15.209Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com [none]
+[debug] [2026-03-31T20:31:15.210Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:15.213Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/pubsub.googleapis.com [none]
+[debug] [2026-03-31T20:31:15.214Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/pubsub.googleapis.com  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:15.218Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/storage.googleapis.com [none]
+[debug] [2026-03-31T20:31:15.218Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/storage.googleapis.com  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:17.289Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/pubsub.googleapis.com 200
+[debug] [2026-03-31T20:31:17.289Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2026-03-31T20:31:17.303Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com 200
+[debug] [2026-03-31T20:31:17.304Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com [omitted]
+[warn] !  functions: missing required API run.googleapis.com. Enabling now... 
+[debug] [2026-03-31T20:31:17.306Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:17.306Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:17.307Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com:enable [none]
+[debug] [2026-03-31T20:31:17.307Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com:enable  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:17.312Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/storage.googleapis.com 200
+[debug] [2026-03-31T20:31:17.312Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2026-03-31T20:31:17.330Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com 200
+[debug] [2026-03-31T20:31:17.330Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com [omitted]
+[warn] !  functions: missing required API eventarc.googleapis.com. Enabling now... 
+[debug] [2026-03-31T20:31:17.333Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:17.333Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:17.333Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com:enable [none]
+[debug] [2026-03-31T20:31:17.334Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com:enable  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:19.156Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com:enable 200
+[debug] [2026-03-31T20:31:19.156Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/eventarc.googleapis.com:enable [omitted]
+[debug] [2026-03-31T20:31:19.200Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com:enable 200
+[debug] [2026-03-31T20:31:19.200Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/170243645110/services/run.googleapis.com:enable [omitted]
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2026-03-31T20:31:29.215Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:29.215Z] Checked if tokens are valid: true, expires at: 1774992004918
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2026-03-31T20:31:29.217Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:29.217Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:29.217Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2026-03-31T20:31:29.217Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/pubsub.googleapis.com:generateServiceIdentity  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:29.217Z] >>> [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/pubsub.googleapis.com:generateServiceIdentity {}
+[debug] [2026-03-31T20:31:29.220Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2026-03-31T20:31:29.220Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/eventarc.googleapis.com:generateServiceIdentity  x-goog-user-project=170243645110
+[debug] [2026-03-31T20:31:29.220Z] >>> [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/eventarc.googleapis.com:generateServiceIdentity {}
+[debug] [2026-03-31T20:31:31.561Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2026-03-31T20:31:31.562Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-170243645110@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"107630089646685590316"}}
+[debug] [2026-03-31T20:31:31.615Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2026-03-31T20:31:31.615Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/170243645110/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-170243645110@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"104088244704378405137"}}
+[debug] [2026-03-31T20:31:31.620Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:31.620Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:31.620Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c [none]
+[debug] [2026-03-31T20:31:33.388Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c 200
+[debug] [2026-03-31T20:31:33.389Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c {"projectNumber":"170243645110","projectId":"civicshield-c634c","lifecycleState":"ACTIVE","name":"civicshield","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-03-31T13:42:17.609Z"}
+[debug] [2026-03-31T20:31:33.389Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:33.390Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:33.390Z] >>> [apiv2][query] GET https://compute.googleapis.com/compute/v1/projects/170243645110 [none]
+[debug] [2026-03-31T20:31:34.098Z] <<< [apiv2][status] GET https://compute.googleapis.com/compute/v1/projects/170243645110 403
+[debug] [2026-03-31T20:31:34.098Z] <<< [apiv2][body] GET https://compute.googleapis.com/compute/v1/projects/170243645110 {"error":{"code":403,"message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","errors":[{"message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","domain":"usageLimits","reason":"accessNotConfigured","extendedHelp":"https://console.developers.google.com"}],"status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"containerInfo":"170243645110","consumer":"projects/170243645110","activationUrl":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110","service":"compute.googleapis.com","serviceTitle":"Compute Engine API"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110"}]}]}}
+[debug] [2026-03-31T20:31:34.099Z] unable to look up default compute service account. Falling back to 170243645110-compute@developer.gserviceaccount.com. Error: {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","errors":[{"message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","domain":"usageLimits","reason":"accessNotConfigured","extendedHelp":"https://console.developers.google.com"}],"status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"containerInfo":"170243645110","consumer":"projects/170243645110","activationUrl":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110","service":"compute.googleapis.com","serviceTitle":"Compute Engine API"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110"}]}]}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://compute.googleapis.com/compute/v1/projects/170243645110 had HTTP Error: 403, Compute Engine API has not been used in project 170243645110 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=170243645110 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":403}
+[debug] [2026-03-31T20:31:34.102Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:34.102Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:34.103Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases pageSize=10&pageToken=
+[debug] [2026-03-31T20:31:34.730Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases 200
+[debug] [2026-03-31T20:31:34.730Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases {}
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2026-03-31T20:31:34.731Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:34.731Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:34.732Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/rulesets [none]
+[debug] [2026-03-31T20:31:34.732Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/rulesets [omitted]
+[debug] [2026-03-31T20:31:35.312Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/rulesets 200
+[debug] [2026-03-31T20:31:35.313Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/rulesets {"name":"projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22","source":{"files":[{"content":"rules_version = '2';\r\nservice cloud.firestore {\r\n  match /databases/{database}/documents {\r\n    function isSignedIn() {\r\n      return request.auth != null;\r\n    }\r\n\r\n    function isAdmin() {\r\n      return isSignedIn() && (\r\n        request.auth.token.admin == true ||\r\n        request.auth.token.role == 'admin'\r\n      );\r\n    }\r\n\r\n    function isOwner(uid) {\r\n      return isSignedIn() && request.auth.uid == uid;\r\n    }\r\n\r\n    match /users/{uid} {\r\n      allow read: if isOwner(uid) || isAdmin();\r\n      allow create, update: if isOwner(uid) || isAdmin();\r\n      allow delete: if isAdmin();\r\n    }\r\n\r\n    match /queries/{queryId} {\r\n      allow create: if isSignedIn() && request.resource.data.uid == request.auth.uid;\r\n      allow read: if isAdmin() || (\r\n        isSignedIn() && resource.data.uid == request.auth.uid\r\n      );\r\n      allow update, delete: if isAdmin();\r\n    }\r\n\r\n    match /schemes/{schemeId} {\r\n      allow read: if isSignedIn();\r\n      allow create, update, delete: if isAdmin();\r\n    }\r\n\r\n    match /query_cache/{cacheKey} {\r\n      allow read, write: if isAdmin();\r\n    }\r\n\r\n    match /analytics_daily/{docId} {\r\n      allow read, write: if isAdmin();\r\n    }\r\n\r\n    match /{document=**} {\r\n      allow read, write: if false;\r\n    }\r\n  }\r\n}\r\n","name":"firestore.rules"}]},"createTime":"2026-03-31T20:31:34.776187Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2026-03-31T20:31:35.313Z] [rules] created ruleset projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22
+[info] i  firestore: deploying indexes... 
+[debug] [2026-03-31T20:31:35.317Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:35.317Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:35.317Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2026-03-31T20:31:37.108Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2026-03-31T20:31:37.108Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2026-03-31T20:31:37.109Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.109Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.109Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2026-03-31T20:31:37.664Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2026-03-31T20:31:37.664Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/civicshield-c634c/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2026-03-31T20:31:37.665Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.665Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.665Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) [none]
+[debug] [2026-03-31T20:31:37.974Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) 200
+[debug] [2026-03-31T20:31:37.974Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default) {"name":"projects/civicshield-c634c/databases/(default)","uid":"74c53969-bceb-4b22-97c0-66d55b0e98df","createTime":"2026-03-31T19:35:25.618733Z","updateTime":"2026-03-31T19:35:25.618733Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2026-03-31T19:35:25.618733Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"realtimeUpdatesMode":"REALTIME_UPDATES_MODE_ENABLED","etag":"IOSridX9ypMDMOvl89T9ypMD"}
+[debug] [2026-03-31T20:31:37.974Z] Creating new index: {"collectionGroup":"queries","queryScope":"COLLECTION","fields":[{"fieldPath":"uid","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[debug] [2026-03-31T20:31:37.974Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.974Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:37.975Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes [none]
+[debug] [2026-03-31T20:31:37.975Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"fields":[{"fieldPath":"uid","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}],"queryScope":"COLLECTION"}
+[debug] [2026-03-31T20:31:38.747Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes 200
+[debug] [2026-03-31T20:31:38.748Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"name":"projects/civicshield-c634c/databases/(default)/operations/S0U0aFhqT2dBQ0lDDCoDIGE5NjBjOWM3YTQ2My03NDVhLTVlZjQtNDVmNy1mZDhkM2I4NiQac2VuaWxlcGlwCQpBEg","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata","startTime":"2026-03-31T20:31:37.979206Z","index":"projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes/CICAgOjXh4EK","state":"INITIALIZING"}}
+[debug] [2026-03-31T20:31:38.748Z] Creating new index: {"collectionGroup":"queries","queryScope":"COLLECTION","fields":[{"fieldPath":"topSchemeIds","arrayConfig":"CONTAINS"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[debug] [2026-03-31T20:31:38.748Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:38.748Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:38.749Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes [none]
+[debug] [2026-03-31T20:31:38.749Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"fields":[{"fieldPath":"topSchemeIds","arrayConfig":"CONTAINS"},{"fieldPath":"createdAt","order":"DESCENDING"}],"queryScope":"COLLECTION"}
+[debug] [2026-03-31T20:31:39.400Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes 200
+[debug] [2026-03-31T20:31:39.401Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"name":"projects/civicshield-c634c/databases/(default)/operations/S01vcFVpSmdBQ0lDDCoDIDg1ZDIyODFmY2VlNy02ZTU4LThmNTQtZDljZC02Y2NkYmRjYiQac2VuaWxlcGlwCQpBEg","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata","startTime":"2026-03-31T20:31:38.801854Z","index":"projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes/CICAgJiUpoMK","state":"INITIALIZING"}}
+[debug] [2026-03-31T20:31:39.401Z] Creating new index: {"collectionGroup":"queries","queryScope":"COLLECTION","fields":[{"fieldPath":"input.state","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[debug] [2026-03-31T20:31:39.401Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:39.401Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:39.401Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes [none]
+[debug] [2026-03-31T20:31:39.401Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"fields":[{"fieldPath":"input.state","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}],"queryScope":"COLLECTION"}
+[debug] [2026-03-31T20:31:39.973Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes 200
+[debug] [2026-03-31T20:31:39.973Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"name":"projects/civicshield-c634c/databases/(default)/operations/S0E0MW1pSmdBQ0lDDCoDIDRhNDc2NmVlMjk1Zi00YzlhLTdmMTQtYWMwMC1kODkzYmVhZiQac2VuaWxlcGlwCQpBEg","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata","startTime":"2026-03-31T20:31:39.378206Z","index":"projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes/CICAgJim14AK","state":"INITIALIZING"}}
+[debug] [2026-03-31T20:31:39.973Z] Creating new index: {"collectionGroup":"queries","queryScope":"COLLECTION","fields":[{"fieldPath":"input.category","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}]}
+[debug] [2026-03-31T20:31:39.974Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:39.974Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:39.974Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes [none]
+[debug] [2026-03-31T20:31:39.974Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"fields":[{"fieldPath":"input.category","order":"ASCENDING"},{"fieldPath":"createdAt","order":"DESCENDING"}],"queryScope":"COLLECTION"}
+[debug] [2026-03-31T20:31:40.461Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes 200
+[debug] [2026-03-31T20:31:40.461Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes {"name":"projects/civicshield-c634c/databases/(default)/operations/S0FKazNpT2dBQ0lDDCoDIGM0YTU5OWVkZjc0MC00MWE5LWJmZjQtZmI4Ny0xZGQyZTlkYiQac2VuaWxlcGlwCQpBEg","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata","startTime":"2026-03-31T20:31:39.868905Z","index":"projects/civicshield-c634c/databases/(default)/collectionGroups/queries/indexes/CICAgOi3kJAK","state":"INITIALIZING"}}
+[debug] [2026-03-31T20:31:40.462Z] Creating new index: {"collectionGroup":"schemes","queryScope":"COLLECTION","fields":[{"fieldPath":"active","order":"ASCENDING"},{"fieldPath":"priority","order":"DESCENDING"}]}
+[debug] [2026-03-31T20:31:40.462Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:40.462Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:40.462Z] >>> [apiv2][query] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/schemes/indexes [none]
+[debug] [2026-03-31T20:31:40.462Z] >>> [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/schemes/indexes {"fields":[{"fieldPath":"active","order":"ASCENDING"},{"fieldPath":"priority","order":"DESCENDING"}],"queryScope":"COLLECTION"}
+[debug] [2026-03-31T20:31:41.175Z] <<< [apiv2][status] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/schemes/indexes 200
+[debug] [2026-03-31T20:31:41.175Z] <<< [apiv2][body] POST https://firestore.googleapis.com/v1/projects/civicshield-c634c/databases/(default)/collectionGroups/schemes/indexes {"name":"projects/civicshield-c634c/databases/(default)/operations/S0lvOUZqSmdBQ0lDDCoDIDQ3NDliOWNjMmZiZC1lZDg5LWI4YjQtNDNhNC0xNDQzOTE0NSQac2VuaWxlcGlwCQpBEg","metadata":{"@type":"type.googleapis.com/google.firestore.admin.v1.IndexOperationMetadata","startTime":"2026-03-31T20:31:40.418246Z","index":"projects/civicshield-c634c/databases/(default)/collectionGroups/schemes/indexes/CICAgJjF9oIK","state":"INITIALIZING"}}
+[info] +  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[debug] [2026-03-31T20:31:41.177Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:41.178Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:41.178Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/civicshield-c634c/billingInfo [none]
+[debug] [2026-03-31T20:31:42.922Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/civicshield-c634c/billingInfo 200
+[debug] [2026-03-31T20:31:42.922Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/civicshield-c634c/billingInfo {"name":"projects/civicshield-c634c/billingInfo","projectId":"civicshield-c634c","billingAccountName":"billingAccounts/014878-84127B-5134DE","billingEnabled":true}
+[debug] [2026-03-31T20:31:42.923Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2026-03-31T20:31:42.924Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:42.924Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:42.924Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions [none]
+[debug] [2026-03-31T20:31:42.924Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions  x-goog-user-project=civicshield-c634c
+[debug] [2026-03-31T20:31:42.924Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-03-31T20:31:44.463Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions 200
+[debug] [2026-03-31T20:31:44.464Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/civicshield-c634c:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2026-03-31T20:31:44.464Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2026-03-31T20:31:44.465Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:44.465Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:44.465Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions:generateUploadUrl [none]
+[debug] [2026-03-31T20:31:47.829Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions:generateUploadUrl 200
+[debug] [2026-03-31T20:31:47.830Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com/3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip?GoogleAccessId=service-170243645110@gcf-admin-robot.iam.gserviceaccount.com&Expires=1774990907&Signature=Jy4Cr5tvEBE0dzTKCMOs%2BWy12T1qJN1Cwu9h%2BwJ06e4BZtdyin3tfHZ%2FQ0y5XttO%2BYdBq0jZDPVIUaEJMhImDehkXjKiXSBkjykjUf24AS5Ex2jQEbKOEudbLzVtTJtI1dAmxoLcflYrErWmuYGJgQ00wc58x03vPbzUCiA29kYO3FkFORkhal4Aw6MYve8gqjLdi9kayXqmjz5kwoUwQmOEC8Sxbx7qx0LFUvOGRo3wYuL20IEaRBndxPB0Jx%2FM0oZN91KZT6dijydJORpufj%2B80z5t88X0b3FWLH6Fn8TATFCGJ8VbW4FSttje4tMADnWa2t1mLwJWZVPdeC3pWg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com","object":"3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip"}}
+[debug] [2026-03-31T20:31:47.832Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com/3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip GoogleAccessId=service-170243645110%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1774990907&Signature=Jy4Cr5tvEBE0dzTKCMOs%2BWy12T1qJN1Cwu9h%2BwJ06e4BZtdyin3tfHZ%2FQ0y5XttO%2BYdBq0jZDPVIUaEJMhImDehkXjKiXSBkjykjUf24AS5Ex2jQEbKOEudbLzVtTJtI1dAmxoLcflYrErWmuYGJgQ00wc58x03vPbzUCiA29kYO3FkFORkhal4Aw6MYve8gqjLdi9kayXqmjz5kwoUwQmOEC8Sxbx7qx0LFUvOGRo3wYuL20IEaRBndxPB0Jx%2FM0oZN91KZT6dijydJORpufj%2B80z5t88X0b3FWLH6Fn8TATFCGJ8VbW4FSttje4tMADnWa2t1mLwJWZVPdeC3pWg%3D%3D
+[debug] [2026-03-31T20:31:47.832Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com/3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip [stream]
+[debug] [2026-03-31T20:31:48.124Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com/3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip 200
+[debug] [2026-03-31T20:31:48.125Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com/3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip [omitted]
+[info] +  functions: functions source uploaded successfully 
+[debug] [2026-03-31T20:31:48.128Z] [rules] releasing cloud.firestore/(default) with ruleset projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22
+[debug] [2026-03-31T20:31:48.129Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:48.129Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:48.130Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases/cloud.firestore/(default) [none]
+[debug] [2026-03-31T20:31:48.130Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases/cloud.firestore/(default) {"release":{"name":"projects/civicshield-c634c/releases/cloud.firestore/(default)","rulesetName":"projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22"}}
+[debug] [2026-03-31T20:31:49.496Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases/cloud.firestore/(default) 404
+[debug] [2026-03-31T20:31:49.496Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases/cloud.firestore/(default) {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-03-31T20:31:49.497Z] [rules] ruleset update failed, attempting to create instead
+[debug] [2026-03-31T20:31:49.498Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:49.498Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:49.498Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases [none]
+[debug] [2026-03-31T20:31:49.499Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases {"name":"projects/civicshield-c634c/releases/cloud.firestore/(default)","rulesetName":"projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22"}
+[debug] [2026-03-31T20:31:51.103Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases 200
+[debug] [2026-03-31T20:31:51.103Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/civicshield-c634c/releases {"name":"projects/civicshield-c634c/releases/cloud.firestore","rulesetName":"projects/civicshield-c634c/rulesets/8cc6d30c-0210-41b4-a824-1959a87c1b22","createTime":"2026-03-31T20:31:50.546632Z","updateTime":"2026-03-31T20:31:50.546632Z"}
+[debug] [2026-03-31T20:31:51.103Z] [rules] created release projects/civicshield-c634c/releases/cloud.firestore
+[info] +  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: creating Node.js 20 (2nd Gen) function api(asia-south1)... 
+[debug] [2026-03-31T20:31:51.114Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:51.115Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:51.115Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions functionId=api
+[debug] [2026-03-31T20:31:51.115Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions {"name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-uploads-170243645110.asia-south1.cloudfunctions.appspot.com","object":"3a77cbad-8d42-4f73-a8c2-3b0796cedc94.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":null,"timeoutSeconds":60,"serviceAccountEmail":null,"availableMemory":"512Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null,"directVpcNetworkInterface":null,"directVpcEgress":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"}}
+[debug] [2026-03-31T20:31:55.670Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions 200
+[debug] [2026-03-31T20:31:55.670Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/functions {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2026-03-31T20:31:55.671Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:55.671Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:55.671Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:31:56.204Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:31:56.204Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 20 is no longer supported by the Node.js community as of 30 April, 2026. Node.js 20 will be deprecated on 2026-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2026-03-31T20:31:56.709Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:31:56.710Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:56.710Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:56.710Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:31:57.267Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:31:57.267Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 20 is no longer supported by the Node.js community as of 30 April, 2026. Node.js 20 will be deprecated on 2026-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2026-03-31T20:31:58.275Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:31:58.275Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:58.276Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:31:58.276Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:31:58.724Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:31:58.724Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 20 is no longer supported by the Node.js community as of 30 April, 2026. Node.js 20 will be deprecated on 2026-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2026-03-31T20:32:00.725Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:00.727Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:00.727Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:00.727Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:01.249Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:01.249Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 20 is no longer supported by the Node.js community as of 30 April, 2026. Node.js 20 will be deprecated on 2026-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2026-03-31T20:32:05.254Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:05.254Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:05.254Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:05.255Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:05.733Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:05.733Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 20 is no longer supported by the Node.js community as of 30 April, 2026. Node.js 20 will be deprecated on 2026-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION"},"done":false}
+[debug] [2026-03-31T20:32:13.739Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:13.740Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:13.740Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:13.740Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:14.347Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:14.347Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703"},"done":false}
+[debug] [2026-03-31T20:32:24.351Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:24.352Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:24.352Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:24.352Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:24.894Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:24.895Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703"},"done":false}
+[debug] [2026-03-31T20:32:34.902Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:34.903Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:34.903Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:34.903Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:35.425Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:35.425Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"CREATE_FUNCTION","buildName":"projects/170243645110/locations/asia-south1/builds/777e54d4-390d-4bf0-b442-52708a317703"},"done":false}
+[debug] [2026-03-31T20:32:45.436Z] [create-default-asia-south1-api] Retrying task index 0
+[debug] [2026-03-31T20:32:45.436Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:45.436Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:45.437Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 [none]
+[debug] [2026-03-31T20:32:45.985Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 200
+[debug] [2026-03-31T20:32:45.985Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217 {"name":"projects/civicshield-c634c/locations/asia-south1/operations/operation-1774989111146-64e57db73394e-90807f0a-b29e5217","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2026-03-31T20:31:55.205611843Z","endTime":"2026-03-31T20:32:41.908261377Z","target":"projects/civicshield-c634c/locations/asia-south1/functions/api","verb":"create","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/civicshield-c634c/locations/asia-south1/functions/api","buildConfig":{"runtime":"nodejs20","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-170243645110-asia-south1","object":"api/function-source.zip","generation":"1774989114491978"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"serviceAccount":"projects/civicshield-c634c/serviceAccounts/170243645110-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/civicshield-c634c/locations/asia-south1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}","GCLOUD_PROJECT":"civicshield-c634c","EVENTARC_CLOUD_EVENT_SOURCE":"projects/civicshield-c634c/locations/asia-south1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","serviceAccountEmail":"170243645110-compute@developer.gserviceaccount.com","availableMemory":"512Mi","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"382a195fedbad2aee605cc0d15d6b3270452abb5"},"environment":"GEN_2"},"stages":[{"name":"ARTIFACT_REGISTRY","message":"Deleting function artifacts in Artifact Registry","state":"COMPLETE"},{"name":"SERVICE","message":"Deleting Cloud Run service","state":"COMPLETE","resource":"projects/civicshield-c634c/locations/asia-south1/services/api"}],"operationType":"CREATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Build failed with status: FAILURE. Could not build the function due to a missing permission on the build service account. If you didn't revoke that permission explicitly, this could be caused by a change in the organization policies. Please refer to the following documentation for more details and resolution: https://cloud.google.com/functions/docs/troubleshooting#build-service-account\n You can also view the logs at https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110.\n"}}
+[debug] [2026-03-31T20:32:45.985Z] Got source token undefined for region asia-south1
+[error] Build failed with status: FAILURE. Could not build the function due to a missing permission on the build service account. If you didn't revoke that permission explicitly, this could be caused by a change in the organization policies. Please refer to the following documentation for more details and resolution: https://cloud.google.com/functions/docs/troubleshooting#build-service-account
+ You can also view the logs at https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110.
+
+[debug] [2026-03-31T20:32:45.998Z] Total Function Deployment time: 54876
+[debug] [2026-03-31T20:32:45.999Z] 1 Functions Deployed
+[debug] [2026-03-31T20:32:45.999Z] 1 Functions Errored
+[debug] [2026-03-31T20:32:45.999Z] 0 Function Deployments Aborted
+[debug] [2026-03-31T20:32:45.999Z] Average Function Deployment time: 54875
+[info] 
+[info] Functions deploy had errors with the following functions:
+	api(asia-south1)
+[debug] [2026-03-31T20:32:46.214Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2026-03-31T20:32:46.215Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:46.216Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:32:46.216Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts [none]
+[debug] [2026-03-31T20:32:46.985Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts 200
+[debug] [2026-03-31T20:32:46.985Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts {"name":"projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts","format":"DOCKER","description":"This repository is created and used by Cloud Functions for storing function docker images.","labels":{"goog-managed-by":"cloudfunctions"},"createTime":"2026-03-31T20:32:10.138572Z","updateTime":"2026-03-31T20:32:10.138572Z","mode":"STANDARD_REPOSITORY","satisfiesPzs":true,"vulnerabilityScanningConfig":{"lastEnableTime":"2026-03-31T20:31:55.387920136Z","enablementState":"SCANNING_DISABLED","enablementStateReason":"API containerscanning.googleapis.com is not enabled."},"satisfiesPzi":true,"registryUri":"asia-south1-docker.pkg.dev/civicshield-c634c/gcf-artifacts"}
+[warn] !  functions: No cleanup policy detected for repositories in asia-south1. This may result in a small monthly bill as container images accumulate over time. 
+[info] i  functions: Configuring cleanup policy for repository in asia-south1. Images older than 1 days will be automatically deleted. 
+[debug] [2026-03-31T20:34:08.962Z] Setting up artifact cleanup policy for region asia-south1
+[debug] [2026-03-31T20:34:08.963Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:34:08.965Z] Checked if tokens are valid: true, expires at: 1774992004918
+[debug] [2026-03-31T20:34:08.966Z] >>> [apiv2][query] PATCH https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts updateMask=name%2CcleanupPolicies%2CcleanupPolicyDryRun%2Clabels
+[debug] [2026-03-31T20:34:08.967Z] >>> [apiv2][body] PATCH https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts {"name":"projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts","cleanupPolicies":{"firebase-functions-cleanup":{"id":"firebase-functions-cleanup","condition":{"tagState":"ANY","olderThan":"86400s"},"action":"DELETE"}},"cleanupPolicyDryRun":false,"labels":{"goog-managed-by":"cloudfunctions"}}
+[debug] [2026-03-31T20:34:09.679Z] <<< [apiv2][status] PATCH https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts 200
+[debug] [2026-03-31T20:34:09.679Z] <<< [apiv2][body] PATCH https://artifactregistry.googleapis.com/v1/projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts {"name":"projects/civicshield-c634c/locations/asia-south1/repositories/gcf-artifacts","format":"DOCKER","description":"This repository is created and used by Cloud Functions for storing function docker images.","labels":{"goog-managed-by":"cloudfunctions"},"createTime":"2026-03-31T20:32:10.138572Z","updateTime":"2026-03-31T20:34:09.130632Z","mode":"STANDARD_REPOSITORY","cleanupPolicies":{"firebase-functions-cleanup":{"id":"firebase-functions-cleanup","action":"DELETE","condition":{"tagState":"ANY","olderThan":"86400s"}}},"satisfiesPzs":true,"vulnerabilityScanningConfig":{"lastEnableTime":"2026-03-31T20:31:55.387920136Z","enablementState":"SCANNING_DISABLED","enablementStateReason":"API containerscanning.googleapis.com is not enabled."},"satisfiesPzi":true}
+[info] i  functions: Configured cleanup policy for repository in asia-south1. 
+[debug] [2026-03-31T20:34:09.682Z] Functions deploy failed.
+[debug] [2026-03-31T20:34:09.682Z] {
+  "endpoint": {
+    "id": "api",
+    "project": "civicshield-c634c",
+    "region": "asia-south1",
+    "entryPoint": "api",
+    "platform": "gcfv2",
+    "runtime": "nodejs20",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": 512,
+    "timeoutSeconds": 60,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "vpc": null,
+    "environmentVariables": {
+      "FIREBASE_CONFIG": "{\"projectId\":\"civicshield-c634c\",\"databaseURL\":\"https://civicshield-c634c-default-rtdb.asia-southeast1.firebasedatabase.app\",\"storageBucket\":\"civicshield-c634c.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "civicshield-c634c",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/civicshield-c634c/locations/asia-south1/services/api"
+    },
+    "codebase": "default",
+    "cpu": 1,
+    "targetedByOnly": false,
+    "hash": "382a195fedbad2aee605cc0d15d6b3270452abb5"
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed with status: FAILURE. Could not build the function due to a missing permission on the build service account. If you didn't revoke that permission explicitly, this could be caused by a change in the organization policies. Please refer to the following documentation for more details and resolution: https://cloud.google.com/functions/docs/troubleshooting#build-service-account\n You can also view the logs at https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110.\n",
+    "original": {
+      "code": 3,
+      "message": "Build failed with status: FAILURE. Could not build the function due to a missing permission on the build service account. If you didn't revoke that permission explicitly, this could be caused by a change in the organization policies. Please refer to the following documentation for more details and resolution: https://cloud.google.com/functions/docs/troubleshooting#build-service-account\n You can also view the logs at https://console.cloud.google.com/cloud-build/builds;region=asia-south1/777e54d4-390d-4bf0-b442-52708a317703?project=170243645110.\n"
+    },
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2026-03-31T20:34:10.000Z] Error: Failed to create function api in region asia-south1
+    at C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:319:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Fabricator.createV2Function (C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:298:30)
+    at async Fabricator.createEndpoint (C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:140:13)
+    at async handle (C:\Users\Ashish\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:92:17)
+[error] 
+[error] Error: There was an error deploying functions

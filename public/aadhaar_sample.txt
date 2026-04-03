@@ -1,0 +1,4 @@
+SAMPLE AADHAAR CARD - For demonstration only
+Name: Rajesh Kumar
+DOB: 01/01/1990
+Aadhaar No: XXXX XXXX 1234
