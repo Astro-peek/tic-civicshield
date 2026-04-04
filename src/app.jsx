@@ -5,16 +5,15 @@ import DashboardHeader from "./components/DashboardHeader";
 import BenefitCounter from "./components/BenefitCounter";
 import SchemeList from "./components/SchemeList";
 import InstalmentLog from "./components/InstalmentLog";
-import OfficerCard from "./components/Officercard";
-import WhatsAppShare from "./components/WhatsAppshare";
+import OfficerCard from "./components/OfficerCard";
+import WhatsAppShare from "./components/WhatsAppShare";
 import SchemeTracker from "./components/SchemeTracker";
-import SchemeFinder from "./components/schemefinder";
+import SchemeFinder from "./components/SchemeFinder";
 import DigiLockerModal from "./components/DigiLockerModal";
+import AdminDashboard from "./components/AdminDashboard";
 import { auth } from "./config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import AuthPage from "./components/AuthPage";
-import AdminDashboard from "./components/AdminDashboard";
-
+import AuthPage from "./components/Authpage";
 
 const TAB_META = {
   schemes: { title: "My Schemes", subtitle: "Track all your applications" },
@@ -38,7 +37,6 @@ function Dashboard({ onHome }) {
         <DashboardHeader title={meta.title} subtitle={meta.subtitle} />
         <div style={{ padding: "24px", maxWidth: "800px", margin: "0 auto" }}>
 
-          {/* SCHEMES TAB */}
           {activeTab === "schemes" && !selectedScheme && (
             <>
               <BenefitCounter />
@@ -46,7 +44,6 @@ function Dashboard({ onHome }) {
             </>
           )}
 
-          {/* SCHEME DETAIL */}
           {activeTab === "schemes" && selectedScheme && (
             <div style={{ color: "#8b9cc8" }}>
               <button
@@ -55,7 +52,6 @@ function Dashboard({ onHome }) {
               >
                 ← Back to My Schemes
               </button>
-
               <div style={{ display: "flex", gap: 6, marginBottom: "20px", background: "#0a0e1a", padding: "4px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
                 {["tracker", "payments", "officer", "share"].map(t => (
                   <button key={t} onClick={() => setDetailTab(t)} style={{
@@ -66,7 +62,6 @@ function Dashboard({ onHome }) {
                   }}>{t}</button>
                 ))}
               </div>
-
               {detailTab === "tracker" && <SchemeTracker schemeId={selectedScheme} />}
               {detailTab === "payments" && <InstalmentLog schemeId={selectedScheme} />}
               {detailTab === "officer" && <OfficerCard schemeId={selectedScheme} />}
@@ -74,13 +69,10 @@ function Dashboard({ onHome }) {
             </div>
           )}
 
-          {/* AI TAB */}
           {activeTab === "ai" && (
             <>
               <SchemeFinder
-                onApplicationSuccess={() => {
-                  setActiveTab("schemes");
-                }}
+                onApplicationSuccess={() => setActiveTab("schemes")}
                 onDigiLocker={() => setShowDigiLocker(true)}
               />
               {showDigiLocker && (
@@ -92,6 +84,8 @@ function Dashboard({ onHome }) {
             </>
           )}
 
+          {activeTab === "admin" && <AdminDashboard />}
+
         </div>
       </main>
     </div>
@@ -99,14 +93,16 @@ function Dashboard({ onHome }) {
 }
 
 export default function App() {
-  const [view, setView] = useState("landing");
   const [user, setUser] = useState(null);
   const [authLoading, setAuthLoading] = useState(true);
+  const [showLanding, setShowLanding] = useState(true);
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (u) => {
+      console.log("Auth user:", u);
       setUser(u);
       setAuthLoading(false);
+      if (u) setShowLanding(false);
     });
     return unsub;
   }, []);
@@ -119,12 +115,16 @@ export default function App() {
     }}>Loading...</div>
   );
 
-  if (!user) return <AuthPage onLogin={() => setUser(auth.currentUser)} />;
+  if (showLanding && !user) return <LandingPage onLaunchApp={() => setShowLanding(false)} />;
 
-  return view === "landing" ? (
-    <LandingPage onLaunchApp={() => setView("dashboard")} />
-  ) : (
-    <Dashboard onHome={() => setView("landing")} />
-  );
+  if (!user) return <AuthPage onLogin={() => {
+    setUser(auth.currentUser);
+    setShowLanding(false);
+  }} />;
+
+  return <Dashboard onHome={() => {
+    import("firebase/auth").then(({ signOut }) => signOut(auth));
+    setUser(null);
+    setShowLanding(true);
+  }} />;
 }
-{activeTab === 'admin' && <AdminDashboard />}

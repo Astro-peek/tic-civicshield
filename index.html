@@ -1,13 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tic-civicshield</title>
+    <meta name="description" content="SchemeMatch CivicShield — AI-powered government scheme discovery, tracking and anti-corruption platform for 90 crore Indian citizens" />
+    <meta name="theme-color" content="#05080f" />
+    <title>SchemeMatch CivicShield — आपका अधिकार, आपका पैसा</title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="SchemeMatch CivicShield" />
+    <meta property="og:description" content="AI finds your government schemes. Track like Swiggy. Report corruption. 35 schemes. One platform." />
+    <meta property="og:type" content="website" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>" />
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{background:#05080f;color:#f0f4ff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden}
+      #root{min-height:100vh}
+      /* Tricolor bar global */
+      .tricolor-bar{background:linear-gradient(90deg,#FF9933 33.33%,#ffffff 33.33%,#ffffff 66.66%,#138808 66.66%);height:3px}
+    </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

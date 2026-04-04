@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import schemes from "../data/schemes";
 
 // ── Animated counter hook ────────────────────────────────────────────────────
 function useCountUp(target, duration = 2000, startOnView = true) {
@@ -128,7 +129,7 @@ const FEATURES = [
     color: "#d97706",
     bg: "#fffbeb",
     border: "#fde68a",
-    tag: "Coming Soon",
+    tag: "Verified",
   },
   {
     icon: "📊",
@@ -183,30 +184,30 @@ const HOW_IT_WORKS = [
 
 const TEAM = [
   {
-    name: "Ashish",
-    role: "Full Stack + AI",
+    name: "Ashish sahu",
+    role: "Fullstack + AI + System Architecture",
     emoji: "👨‍💻",
     color: "#3b82f6",
     bg: "#eff6ff",
   },
   {
-    name: "Team Member 2",
-    role: "UI/UX Design",
-    emoji: "🎨",
+    name: "paras gupta",
+    role: "Deployment + Git Operation + Debugging",
+    emoji: "🚀",
     color: "#7c3aed",
     bg: "#f5f3ff",
   },
   {
-    name: "Team Member 3",
-    role: "Backend + n8n",
-    emoji: "⚙️",
+    name: "Anushka rai",
+    role: "UI/UX",
+    emoji: "🎨",
     color: "#138808",
     bg: "#f0fdf4",
   },
   {
-    name: "Team Member 4",
-    role: "Research + Policy",
-    emoji: "📚",
+    name: "Mahendra awasthi",
+    role: "Research & Content + PPT",
+    emoji: "📞",
     color: "#d97706",
     bg: "#fffbeb",
   },
@@ -361,15 +362,15 @@ export default function LandingPage({ onLaunchApp }) {
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.boxShadow =
-                "0 6px 20px rgba(255,153,51,0.5)")
+            (e.currentTarget.style.boxShadow =
+              "0 6px 20px rgba(255,153,51,0.5)")
             }
             onMouseLeave={(e) =>
-              (e.currentTarget.style.boxShadow =
-                "0 4px 14px rgba(255,153,51,0.35)")
+            (e.currentTarget.style.boxShadow =
+              "0 4px 14px rgba(255,153,51,0.35)")
             }
           >
-            🚀 Launch App
+            🚀 Apply Schemes
           </button>
         </div>
       </nav>
@@ -434,41 +435,6 @@ export default function LandingPage({ onLaunchApp }) {
             zIndex: 1,
           }}
         >
-          {/* Badge */}
-          <div
-            className="animate-fadeUp"
-            style={{
-              animationDelay: "0s",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "#fff8f0",
-              border: "1.5px solid #ffe0b2",
-              borderRadius: 20,
-              padding: "7px 18px",
-              marginBottom: 32,
-            }}
-          >
-            <div
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "#FF9933",
-              }}
-              className="animate-pulse-dot"
-            />
-            <span
-              style={{
-                fontSize: 12,
-                color: "#E65C00",
-                fontWeight: 700,
-                letterSpacing: "0.04em",
-              }}
-            >
-              🇮🇳 Hackathon 2025 · CivicTech Innovation
-            </span>
-          </div>
 
           {/* Headline */}
           <h1
@@ -543,7 +509,7 @@ export default function LandingPage({ onLaunchApp }) {
             }}
           >
             <button
-              onClick={onLaunchApp}
+              onClick={() => { document.getElementById('schemes-directory')?.scrollIntoView({ behavior: 'smooth' }); }}
               style={{
                 padding: "15px 32px",
                 borderRadius: 14,
@@ -571,7 +537,7 @@ export default function LandingPage({ onLaunchApp }) {
                   "0 8px 28px rgba(255,153,51,0.4)";
               }}
             >
-              🚀 Launch Live Demo
+              🚀 My Schemes
             </button>
             <a
               href="#how-it-works"
@@ -1188,7 +1154,7 @@ export default function LandingPage({ onLaunchApp }) {
                   "0 8px 32px rgba(255,153,51,0.4)";
               }}
             >
-              🚀 Launch Demo Now
+              🚀 Apply Schemes
             </button>
           </div>
         </div>
@@ -1209,13 +1175,13 @@ export default function LandingPage({ onLaunchApp }) {
               className="section-label"
               style={{ color: "#d97706", marginBottom: 10 }}
             >
-              The Builders
+              About Us
             </div>
             <h2
               className="section-title"
               style={{ fontSize: "clamp(26px,3.5vw,40px)" }}
             >
-              Team CivicShield
+              The Team Behind SchemeMatch
             </h2>
           </div>
           <div
@@ -1279,62 +1245,120 @@ export default function LandingPage({ onLaunchApp }) {
         </div>
       </section>
 
+      {/* ── SCHEMES DIRECTORY ── */}
+      <section id="schemes-directory" style={{ padding: "90px 24px", background: "#ffffff" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 50 }}>
+            <div className="section-label" style={{ color: "#3b82f6", marginBottom: 10, fontWeight: 700 }}>Complete Directory</div>
+            <h2 className="section-title" style={{ fontSize: "clamp(26px,3.5vw,40px)", marginBottom: 12 }}>All {schemes.length} Government Schemes</h2>
+            <p style={{ color: "#8b9cc8", fontSize: 16 }}>Browse through the comprehensive list of available schemes</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 24 }}>
+            {schemes.map(s => (
+              <div key={s.id} style={{ background: "#f8faff", borderRadius: 16, padding: 24, border: "1px solid #e2e8f0", position: "relative", overflow: "hidden" }}>
+                <div style={{ fontSize: 32, marginBottom: 12 }}>{s.emoji}</div>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1a1f36", marginBottom: 4 }}>{s.name}</h3>
+                <div style={{ fontSize: 12, color: s.color, fontWeight: 700, padding: "4px 10px", background: `${s.color}15`, borderRadius: 12, display: "inline-block", marginBottom: 12 }}>
+                  {s.category}
+                </div>
+                <p style={{ fontSize: 14, color: "#4a5580", lineHeight: 1.5, marginBottom: 16 }}>{s.description}</p>
+                <div style={{ fontSize: 13, fontWeight: 700, color: "#138808" }}>₹ {s.benefit}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── RECENT UPDATES & ARTICLES ── */}
+      <section id="updates" style={{ padding: "90px 24px", background: "#f0fdf4", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 50 }}>
+            <div className="section-label" style={{ color: "#16a34a", marginBottom: 10, fontWeight: 700 }}>News & Articles</div>
+            <h2 className="section-title" style={{ fontSize: "clamp(26px,3.5vw,40px)" }}>Recent Govt Updates</h2>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24 }}>
+            {[
+              { date: "April 4, 2026", title: "New Guidelines for PM Awas Yojana", desc: "The government has recently updated the income slab limits for PMAY subsidised loans. Discover the new eligibility rules." },
+              { date: "March 28, 2026", title: "Digital India Expansion", desc: "DigiLocker integration is now completely rolled out across all portals for seamless document sharing and verification." },
+              { date: "March 15, 2026", title: "Agricultural Benefits Subsidies Increased", desc: "Farmers can now access increased capital loans through the KCC scheme and benefit from lower interest rates." }
+            ].map((article, i) => (
+              <div key={i} style={{ background: "#ffffff", borderRadius: 16, padding: 24, boxShadow: "0 4px 12px rgba(0,0,0,0.03)" }}>
+                <div style={{ fontSize: 12, color: "#8b9cc8", fontWeight: 600, marginBottom: 8 }}>{article.date}</div>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: "#1a1f36", marginBottom: 12 }}>{article.title}</h3>
+                <p style={{ fontSize: 14, color: "#4a5580", lineHeight: 1.5 }}>{article.desc}</p>
+                <div style={{ marginTop: 16, color: "#22c55e", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Read Article →</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
-      <footer
-        style={{
-          padding: "44px 24px",
-          background: "#1a1f36",
-          color: "#f0f4ff",
-        }}
-      >
-        <div
-          className="tricolor-bar"
-          style={{ marginBottom: 32, borderRadius: 4 }}
-        />
-        <div
-          style={{
-            maxWidth: 1100,
-            margin: "0 auto",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 16,
-          }}
-        >
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div
-              style={{
-                width: 34,
-                height: 34,
-                borderRadius: 10,
-                background: "linear-gradient(135deg,#FF9933,#E65C00)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 16,
-              }}
-            >
-              🛡️
+      <footer style={{ background: "#2b2a3a", color: "#f0f4ff", padding: "60px 40px 40px", fontFamily: "sans-serif" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexWrap: "wrap", gap: 40, justifyContent: "space-between" }}>
+          
+          <div style={{ flex: "1 1 250px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
+              <span style={{ fontSize: 16, color: "#cbd5e1" }}>©2026</span>
+              <span style={{ fontSize: 28, fontWeight: 800 }}>
+                <span style={{color: "#22c55e"}}>my</span>Scheme
+              </span>
             </div>
-            <div>
-              <div
-                style={{
-                  fontFamily: "'Poppins', sans-serif",
-                  fontSize: 14,
-                  fontWeight: 700,
-                  color: "#f0f4ff",
-                }}
-              >
-                SchemeMatch CivicShield
-              </div>
-              <div style={{ fontSize: 11, color: "#4a5580", marginTop: 1 }}>
-                आपका अधिकार, आपका पैसा · Your Rights, Your Money
-              </div>
+            <div style={{ fontSize: 13, color: "#cbd5e1", marginBottom: 20, lineHeight: 1.6 }}>
+              यह साइट <strong>Digital India</strong><br />
+              डिजिटल इंडिया कॉर्पोरेशन (DIC)<br />
+              इलेक्ट्रॉनिक्स और आईटी मंत्रालय (MeitY)<br />
+              भारत सरकार©
+            </div>
+            <button style={{ 
+              background: "transparent", border: "1px solid #cbd5e1", borderRadius: 4, 
+              padding: "8px 16px", color: "#f0f4ff", fontSize: 13, cursor: "pointer"
+            }}>
+              सोशल मीडिया पर जुड़ें
+            </button>
+          </div>
+
+          <div style={{ flex: "1 1 200px" }}>
+            <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#fff" }}>त्वरित लिंक</h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, fontSize: 14, color: "#cbd5e1", display: "flex", flexDirection: "column", gap: 12 }}>
+              <li style={{ cursor: "pointer" }}>› हमारे बारे में</li>
+              <li style={{ cursor: "pointer" }}>› हमसे संपर्क करें</li>
+              <li style={{ cursor: "pointer" }}>› स्क्रीन रीडर</li>
+              <li style={{ cursor: "pointer" }}>› अभिगम्यता विवरण</li>
+              <li style={{ cursor: "pointer" }}>› अधिकतर पूछे जाने वाले सवाल</li>
+              <li style={{ cursor: "pointer" }}>› अस्वीकरण</li>
+              <li style={{ cursor: "pointer" }}>› नियम एवं शर्तें</li>
+            </ul>
+          </div>
+
+          <div style={{ flex: "1 1 300px" }}>
+            <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#fff" }}>उपयोगी लिंक</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              {["Digital India", "DigiLocker", "UMANG", "india.gov.in", "myGOV", "data.gov.in"].map(link => (
+                <div key={link} style={{ 
+                  background: "#fff", color: "#333", padding: "10px", borderRadius: 6, 
+                  fontSize: 12, fontWeight: "bold", textAlign: "center", display: "flex", 
+                  alignItems: "center", justifyContent: "center", minHeight: "44px" 
+                }}>
+                  {link}
+                </div>
+              ))}
             </div>
           </div>
-          <div style={{ fontSize: 12, color: "#4a5580" }}>
-            Built with ❤️ for Hackathon 2025 · 🇮🇳 Jai Hind
+
+          <div style={{ flex: "1 1 250px" }}>
+            <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 20, color: "#fff" }}>संपर्क करें</h3>
+            <div style={{ fontSize: 14, color: "#cbd5e1", display: "flex", flexDirection: "column", gap: 16 }}>
+              <p style={{ margin: 0, lineHeight: 1.6 }}>
+                4 मंजिल, NeGD, इलेक्ट्रॉनिक्स निकेतन, 6 सीजीओ कॉम्प्लेक्स, लोधी रोड, नई दिल्ली - 110003, भारत
+              </p>
+              <p style={{ margin: 0 }}>
+                support-myscheme[at]digitalindia[dot]gov[dot]in
+              </p>
+              <p style={{ margin: 0 }}>
+                (011) 24303714 (9:00 AM to 5:30 PM)
+              </p>
+            </div>
           </div>
         </div>
       </footer>
