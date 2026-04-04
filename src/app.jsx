@@ -9,6 +9,8 @@ import InstalmentLog from "./components/InstalmentLog";
 import OfficerCard from "./components/Officercard";
 import WhatsAppShare from "./components/WhatsAppshare";
 import SchemeTracker from "./components/SchemeTracker";
+import EligibilityForm from "./components/EligibilityForm";
+import DigiLockerModal from "./components/DigiLockerModal"
 
 
 const TAB_META = {
@@ -79,3 +81,21 @@ selectedScheme && (
     {detailTab === 'share' && <WhatsAppShare schemeId={selectedScheme} />}
   </div>
 )
+{activeTab === 'ai' && (
+  <div>
+    <EligibilityForm 
+      onFind={() => alert('Discovery Engine coming in Task 8!')} 
+      onDigiLocker={() => setShowDigiLocker(true)} 
+    />
+    
+    {showDigiLocker && (
+      <DigiLockerModal 
+        onClose={() => setShowDigiLocker(false)} 
+        onSuccess={() => {
+          setShowDigiLocker(false);
+          alert('Success: Data pre-filled from DigiLocker!');
+        }} 
+      />
+    )}
+  </div>
+)}
