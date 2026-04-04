@@ -7,7 +7,7 @@ import MySchemes from './MySchemes';
 import SuccessPopup from './SuccessPopup';
 import { addAppliedScheme } from '../stores/applicationStore';
 import { ALL_AVAILABLE_SCHEMES } from '../data/mockData';
-import { uploadDocument } from '../firebase';
+import { uploadDocument } from "../config/firebase";
 
 export default function SchemeFinder({ onApplicationSuccess }) {
   const [view, setView] = useState('eligibility'); // eligibility | results | my-schemes
@@ -70,14 +70,10 @@ export default function SchemeFinder({ onApplicationSuccess }) {
       schemeAmount:   selectedScheme.benefit,
       applicantName:  formData.name,
       income:         formData.income,
-      state:          'India',
+      state:          formData.state || '',
       fileUrl:        docUrl,
       fileName:       formData.file?.name || null,
     });
-
-    if (onApplicationSuccess) {
-      onApplicationSuccess(appId);
-    }
 
     setModal('success');
   };

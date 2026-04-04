@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { getTotalEntitled, getTotalReceived, SCHEMES, getActiveStageIndex, STAGE_CONFIG } from '../data/mockData'
+import React, { useEffect, useState } from 'react'
+import { getAppliedSchemes, subscribe, getDynActiveStageIndex } from '../stores/applicationStore'
+import { STAGE_CONFIG } from '../data/mockData'
 
 function useCountUp(target, duration = 1200) {
   const [val, setVal] = useState(0)
@@ -23,10 +24,17 @@ function fmt(n) {
 }
 
 export default function BenefitCounter() {
-  const entitled = getTotalEntitled()
-  const received = getTotalReceived()
+  const [schemes, setSchemes] = useState(getAppliedSchemes())
+
+  useEffect(() => {
+    const unsub = subscribe(() => setSchemes(getAppliedSchemes()))
+    return unsub
+  }, [])
+
+  const entitled = schemes.reduce((sum, s) => sum + (s.amountNum || 0), 0)
+  const received = schemes.reduce((sum, s) => sum + (s.instalments || []).filter(i => i.status === 'paid').reduce((a, b) => a + b.amount, 0), 0)
   const pending  = entitled - received
-  const pct      = Math.round((received / entitled) * 100)
+  const pct      = entitled > 0 ? Math.round((received / entitled) * 100) : 0
 
   const animEntitled = useCountUp(entitled)
   const animReceived = useCountUp(received)
@@ -60,19 +68,21 @@ export default function BenefitCounter() {
 
       {/* Per scheme mini list */}
       <div style={{ marginTop: 14, paddingTop: 12, borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-        {SCHEMES.map(sc => {
+        {schemes.slice(0, 3).map(sc => {
           const paid = (sc.instalments || []).filter(i => i.status === 'paid').reduce((s, i) => s + i.amount, 0)
-          const p = Math.round((paid / sc.amountNum) * 100)
-          const activeIdx = getActiveStageIndex(sc.id)
-          const stage = STAGE_CONFIG[activeIdx]
+          const p = sc.amountNum > 0 ? Math.round((paid / sc.amountNum) * 100) : 0
+          
           return (
             <div key={sc.id} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
               <span style={{ fontSize: 14, width: 22, textAlign: 'center' }}>
-                {sc.category === 'Agriculture' ? '🌾' : sc.category === 'Housing' ? '🏠' : '❤️'}
+                {sc.category === 'Agriculture' ? '🌾' : sc.category === 'Housing' ? '🏠' : sc.category === 'Health' ? '❤️' : '📄'}
               </span>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4 }}>
-                  <span style={{ fontSize: 11, color: '#8b9cc8', fontWeight: 500 }}>{sc.nameHi}</span>
+                  <span style={{ fontSize: 11, color: '#8b9cc8', fontWeight: 500 }}>
+                    {(sc.name || 'Application').substring(0, 25)}
+                    {(sc.name || 'Application').length > 25 ? '...' : ''}
+                  </span>
                   <span style={{ fontSize: 11, color: '#22c55e', fontWeight: 700 }}>₹{paid.toLocaleString('en-IN')} / {sc.amount}</span>
                 </div>
                 <div style={{ height: 4, background: 'rgba(255,255,255,0.05)', borderRadius: 4, overflow: 'hidden' }}>

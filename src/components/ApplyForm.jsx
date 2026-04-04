@@ -111,7 +111,7 @@ export default function ApplyForm({ scheme, onBack, onSubmit }) {
           <input 
             style={S.input} 
             type="text" 
-            placeholder="e.g. Ashish Sahu" 
+            placeholder="Enter Full Name" 
             value={name} 
             onChange={(e) => setName(e.target.value)} 
           />
@@ -120,7 +120,7 @@ export default function ApplyForm({ scheme, onBack, onSubmit }) {
           <input 
             style={S.input} 
             type="number" 
-            placeholder="5,00,000" 
+            placeholder="Enter Annual Income" 
             value={income} 
             onChange={(e) => setIncome(e.target.value)} 
           />

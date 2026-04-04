@@ -1,5 +1,5 @@
 import React from 'react'
-import { User, BadgeCheck, Clock, AlertTriangle, Phone, Building2, Timer } from 'lucide-react'
+import { User, BadgeCheck, Clock, AlertTriangle, Phone, Building2, Timer, Star, CheckCircle2 } from 'lucide-react'
 import { OFFICERS_MAP, SCHEMES, getDelayDays } from '../data/mockData'
 
 function daysSince(dateStr) {
@@ -69,6 +69,31 @@ export default function OfficerCard({ schemeId }) {
               <Building2 size={11} />
               <span className="text-xs">{officer.department}</span>
             </div>
+          </div>
+        </div>
+
+        {/* Performance Metrics */}
+        <div className="flex items-center justify-between border border-navy-100 rounded-xl p-3 bg-navy-50/50">
+          <div className="text-center flex-1 border-r border-navy-100 last:border-0 pl-0 pr-2">
+            <div className="flex items-center justify-center gap-1 text-yellow-500 mb-0.5">
+              <Star size={14} className="fill-current" />
+              <span className="font-bold text-sm text-navy-900">{officer.rating || 'N/A'}</span>
+            </div>
+            <p className="text-[10px] text-navy-500 font-medium tracking-wide uppercase">Rating</p>
+          </div>
+          <div className="text-center flex-1 border-r border-navy-100 px-2">
+            <div className="flex items-center justify-center gap-1 text-teal-600 mb-0.5">
+              <CheckCircle2 size={14} />
+              <span className="font-bold text-sm text-navy-900">{officer.casesResolved || 0}</span>
+            </div>
+            <p className="text-[10px] text-navy-500 font-medium tracking-wide uppercase">Cases</p>
+          </div>
+          <div className="text-center flex-1 px-2">
+            <div className="flex items-center justify-center gap-1 mb-0.5">
+              <Timer size={14} className={(officer.onTimePercentage || 0) >= 80 ? 'text-green-500' : 'text-orange-500'} />
+              <span className="font-bold text-sm text-navy-900">{officer.onTimePercentage || 0}%</span>
+            </div>
+            <p className="text-[10px] text-navy-500 font-medium tracking-wide uppercase">On Time</p>
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAppliedSchemes, subscribe, getDynActiveStageIndex, setAppliedSchemes } from '../stores/applicationStore';
-import { fetchApplications } from '../firebase';
+import { fetchApplications } from '../config/firebase';
 import SchemeTracker from './SchemeTracker';
 import InstalmentLog from './InstalmentLog';
 import OfficerCard from './OfficerCard';

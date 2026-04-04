@@ -31,6 +31,21 @@ const S = {
     marginBottom: 16,
     transition: 'all 0.2s',
   },
+  select: {
+    width: '100%',
+    padding: '12px 14px',
+    borderRadius: 12,
+    border: '1px solid rgba(255,255,255,0.1)',
+    background: '#1a2236',
+    color: '#f0f4ff',
+    fontSize: 14,
+    outline: 'none',
+    boxSizing: 'border-box',
+    marginBottom: 16,
+    transition: 'all 0.2s',
+    colorScheme: 'dark',
+    cursor: 'pointer',
+  },
   btnPrimary: {
     width: '100%',
     padding: '14px',
@@ -67,11 +82,11 @@ const GENDERS = ['male', 'female', 'other'];
 export default function EligibilityForm({ onFind, onDigiLocker }) {
   const [profile, setProfile] = useState({
     name: '',
-    income: 300000,
-    category: 'general',
-    occupation: 'unemployed',
-    gender: 'male',
-    state: 'Maharashtra'
+    income: '',
+    category: '',
+    occupation: '',
+    gender: '',
+    state: ''
   });
 
   const handleChange = (e) => {
@@ -93,7 +108,7 @@ export default function EligibilityForm({ onFind, onDigiLocker }) {
             value={profile.name}
             onChange={handleChange}
             type="text" 
-            placeholder="e.g. Ashish Sahu" 
+            placeholder="Enter Full Name" 
           />
         </div>
 
@@ -105,45 +120,48 @@ export default function EligibilityForm({ onFind, onDigiLocker }) {
             value={profile.income}
             onChange={handleChange}
             type="number" 
-            placeholder="e.g. 500000" 
+            placeholder="Enter Annual Income" 
           />
         </div>
 
         <div>
-          <label style={S.label}>Category</label>
-          <select style={S.input} name="category" value={profile.category} onChange={handleChange}>
-            {CATEGORIES.map(c => <option key={c} value={c}>{c.toUpperCase()}</option>)}
+          <label style={S.label}>Category *</label>
+          <select style={S.select} name="category" value={profile.category} onChange={handleChange}>
+            <option value="" disabled style={{ background: '#1a2236', color: '#6b7fa8' }}>Select...</option>
+            {CATEGORIES.map(c => <option key={c} value={c} style={{ background: '#1a2236', color: '#f0f4ff' }}>{c.toUpperCase()}</option>)}
           </select>
         </div>
 
         <div>
-          <label style={S.label}>Occupation</label>
-          <select style={S.input} name="occupation" value={profile.occupation} onChange={handleChange}>
-            {OCCUPATIONS.map(o => <option key={o} value={o}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>)}
+          <label style={S.label}>Occupation *</label>
+          <select style={S.select} name="occupation" value={profile.occupation} onChange={handleChange}>
+            <option value="" disabled style={{ background: '#1a2236', color: '#6b7fa8' }}>Select...</option>
+            {OCCUPATIONS.map(o => <option key={o} value={o} style={{ background: '#1a2236', color: '#f0f4ff' }}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>)}
           </select>
         </div>
 
         <div>
-          <label style={S.label}>Gender</label>
-          <select style={S.input} name="gender" value={profile.gender} onChange={handleChange}>
-            {GENDERS.map(g => <option key={g} value={g}>{g.charAt(0).toUpperCase() + g.slice(1)}</option>)}
+          <label style={S.label}>Gender *</label>
+          <select style={S.select} name="gender" value={profile.gender} onChange={handleChange}>
+            <option value="" disabled style={{ background: '#1a2236', color: '#6b7fa8' }}>Select...</option>
+            {GENDERS.map(g => <option key={g} value={g} style={{ background: '#1a2236', color: '#f0f4ff' }}>{g.charAt(0).toUpperCase() + g.slice(1)}</option>)}
           </select>
         </div>
 
         <div>
-          <label style={S.label}>Current State</label>
+          <label style={S.label}>Current State *</label>
           <input 
             style={S.input} 
             name="state"
             value={profile.state}
             onChange={handleChange}
             type="text" 
-            placeholder="e.g. Madhya Pradesh" 
+            placeholder="Enter State" 
           />
         </div>
       </div>
 
-      <button style={S.btnPrimary} onClick={() => onFind(profile)}>Find My Scheme</button>
+      <button style={S.btnPrimary} disabled={!profile.category || !profile.occupation || !profile.gender || !profile.state} onClick={() => onFind(profile)}>Find My Scheme</button>
       
       <button style={S.btnSecondary} onClick={() => onDigiLocker()}>
         <span>🔒</span> Fetch from DigiLocker

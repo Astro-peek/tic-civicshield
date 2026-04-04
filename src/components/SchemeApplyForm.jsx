@@ -49,12 +49,12 @@ export default function SchemeApplyForm({ scheme, onClose, onSuccess }) {
             </div>
 
             <label style={S.label}>Full Name</label>
-            <input style={S.input} placeholder="e.g. Rajesh Kumar" value={form.name} onChange={(e) => setF('name', e.target.value)} />
+            <input style={S.input} placeholder="Enter Full Name" value={form.name} onChange={(e) => setF('name', e.target.value)} />
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
                 <label style={S.label}>Annual Income (₹)</label>
-                <input style={S.input} type="number" placeholder="150000" value={form.income} onChange={(e) => setF('income', e.target.value)} />
+                <input style={S.input} type="number" placeholder="Enter Annual Income" value={form.income} onChange={(e) => setF('income', e.target.value)} />
               </div>
               <div>
                 <label style={S.label}>Category</label>
@@ -65,7 +65,7 @@ export default function SchemeApplyForm({ scheme, onClose, onSuccess }) {
             </div>
 
             <label style={S.label}>State</label>
-            <input style={S.input} placeholder="e.g. Maharashtra" value={form.state} onChange={(e) => setF('state', e.target.value)} />
+            <input style={S.input} placeholder="Enter State" value={form.state} onChange={(e) => setF('state', e.target.value)} />
 
             <label style={S.label}>Upload Supporting Document</label>
             <label style={{ ...S.fileInputBox, borderColor: file ? '#22c55e' : 'rgba(79,142,247,0.3)', background: file ? 'rgba(34,197,94,0.05)' : 'rgba(79,142,247,0.05)' }}>

@@ -90,7 +90,7 @@ const S = {
   },
 };
 
-export default function ComplaintModal({ schemeId, onClose }) {
+export default function ComplaintModal({ schemeId, onClose, inline = false }) {
   const [step, setStep] = useState(1); // 1 form | 2 loading | 3 success | 4 error
   const [form, setForm] = useState({
     type: "",
@@ -149,9 +149,17 @@ export default function ComplaintModal({ schemeId, onClose }) {
     }
   };
 
+  const overlayStyle = inline 
+    ? { display: "flex", justifyContent: "center", width: "100%" } 
+    : S.overlay;
+
+  const sheetStyle = inline
+    ? { ...S.sheet, borderRadius: "20px", borderBottom: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 20px 40px rgba(0,0,0,0.5)" }
+    : S.sheet;
+
   return (
-    <div style={S.overlay} onClick={onClose}>
-      <div style={S.sheet} onClick={(e) => e.stopPropagation()}>
+    <div style={overlayStyle} onClick={onClose}>
+      <div style={sheetStyle} onClick={(e) => e.stopPropagation()}>
         {/* ── HEADER ── */}
         <div style={S.header}>
           <div

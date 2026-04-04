@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import schemes from '../data/schemes';
-import { saveApplication, uploadDocument } from '../firebase';
+import { saveApplication, uploadDocument } from '../config/firebase';
 import { addAppliedScheme } from '../stores/applicationStore';
 import DigiLockerMock from './DigiLockerMock';
 
@@ -89,7 +89,9 @@ function ApplyModal({ scheme, onClose, onSuccess, prefilledName, prefilledIncome
   const [error, setError]     = useState('');
 
   const handleSubmit = async () => {
-    if (!name.trim() || !income.trim()) { setError('Please fill Name and Income.'); return; }
+    const nameStr = String(name || '');
+    const incomeStr = String(income || '');
+    if (!nameStr.trim() || !incomeStr.trim()) { setError('Please fill Name and Income.'); return; }
     setError('');
     setStep('submitting');
 
@@ -119,7 +121,8 @@ function ApplyModal({ scheme, onClose, onSuccess, prefilledName, prefilledIncome
       schemeAmount:   scheme.benefit,
       applicantName:  name.trim(),
       state:          'India',
-      uploadedFile:   file,
+      fileName:       file ? file.name : null,
+      fileUrl:        documentUrl || null,
     });
 
     setFirestoreId(result.id || appTempId);
@@ -148,12 +151,12 @@ function ApplyModal({ scheme, onClose, onSuccess, prefilledName, prefilledIncome
             {/* Form fields */}
             <div style={{ marginBottom:14 }}>
               <label style={S.label}>Your Full Name *</label>
-              <input className="fi" style={S.input} placeholder="e.g. Rajesh Kumar" value={name} onChange={e => setName(e.target.value)} />
+              <input className="fi" style={S.input} placeholder="Enter Full Name" value={name} onChange={e => setName(e.target.value)} />
             </div>
 
             <div style={{ marginBottom:14 }}>
               <label style={S.label}>Annual Income (₹) *</label>
-              <input className="fi" style={S.input} type="number" placeholder="e.g. 80000" value={income} onChange={e => setIncome(e.target.value)} />
+              <input className="fi" style={S.input} type="number" placeholder="Enter Annual Income" value={income} onChange={e => setIncome(e.target.value)} />
             </div>
 
             {/* Required Documents download section */}
@@ -293,11 +296,11 @@ export default function DirectApplyForm({ onApplicationSuccess }) {
         <div style={S.grid2}>
           <div>
             <label style={S.label}>Age</label>
-            <input className="fi" style={S.input} type="number" placeholder="e.g. 32" value={profile.age} onChange={e => setP('age', e.target.value)} />
+            <input className="fi" style={S.input} type="number" placeholder="Enter Age" value={profile.age} onChange={e => setP('age', e.target.value)} />
           </div>
           <div>
             <label style={S.label}>Annual Income (₹)</label>
-            <input className="fi" style={S.input} type="number" placeholder="e.g. 80000" value={profile.income} onChange={e => setP('income', e.target.value)} />
+            <input className="fi" style={S.input} type="number" placeholder="Enter Annual Income" value={profile.income} onChange={e => setP('income', e.target.value)} />
           </div>
         </div>
 

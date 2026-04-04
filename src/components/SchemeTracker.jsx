@@ -125,7 +125,14 @@ export default function SchemeTracker({ schemeId }) {
   const activeIdx  = getDynActiveStageIndex(schemeId)
   const scheme     = getAppliedSchemes().find(s => s.id === schemeId)
   const docs       = getDocuments()[schemeId] || []
-  const nextStep   = NEXT_STEPS[schemeId]
+  
+  const nextStep = NEXT_STEPS[schemeId] || {
+    en: 'Your application has been received and is currently under initial review. Please check back later for updates.',
+    hi: 'आपका आवेदन प्राप्त हो गया है और प्रारंभिक समीक्षा के अधीन है। कृपया अपडेट के लिए जाँच करते रहें।',
+    action: 'In Progress',
+    urgency: 'medium',
+  };
+
   const progress   = Math.round((activeIdx / (STAGE_CONFIG.length - 1)) * 100)
 
   if (!timelines || !scheme) return null

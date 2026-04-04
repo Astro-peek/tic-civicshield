@@ -12,7 +12,7 @@ export const SCHEMES = [
     instalments: [
       { id: 'i1', label: '1st Instalment', labelHi: 'पहली किस्त', amount: 2000, date: '2024-04-15', status: 'paid' },
       { id: 'i2', label: '2nd Instalment', labelHi: 'दूसरी किस्त', amount: 2000, date: '2024-08-10', status: 'paid' },
-      { id: 'i3', label: '3rd Instalment', labelHi: 'तीसरी किस्त', amount: 2000, date: '2024-12-31', status: 'pending' },
+      { id: 'i3', label: '3rd Instalment', labelHi: 'तीसरी किस्त', amount: 2000, date: '2024-12-31', status: 'paid' },
     ],
   },
   {
@@ -26,8 +26,8 @@ export const SCHEMES = [
     description: 'Housing for All - affordable housing scheme',
     instalments: [
       { id: 'i1', label: '1st Tranche', labelHi: 'पहली किश्त', amount: 50000, date: '2024-12-10', status: 'paid' },
-      { id: 'i2', label: '2nd Tranche', labelHi: 'दूसरी किश्त', amount: 40000, date: '2025-01-15', status: 'pending' },
-      { id: 'i3', label: '3rd Tranche', labelHi: 'तीसरी किश्त', amount: 30000, date: '2025-03-01', status: 'upcoming' },
+      { id: 'i2', label: '2nd Tranche', labelHi: 'दूसरी किश्त', amount: 40000, date: '2025-01-15', status: 'paid' },
+      { id: 'i3', label: '3rd Tranche', labelHi: 'तीसरी किश्त', amount: 30000, date: '2025-03-01', status: 'paid' },
     ],
   },
   {
@@ -40,7 +40,7 @@ export const SCHEMES = [
     amountNum: 500000,
     description: 'Health insurance coverage for low income families',
     instalments: [
-      { id: 'i1', label: 'Card Activation', labelHi: 'कार्ड सक्रियण', amount: 500000, date: '2025-01-25', status: 'upcoming' },
+      { id: 'i1', label: 'Card Activation', labelHi: 'कार्ड सक्रियण', amount: 500000, date: '2025-01-25', status: 'paid' },
     ],
   },
 ]
@@ -80,9 +80,9 @@ export const DOCUMENTS_MAP = {
 
 // ─── Officers ──────────────────────────────────────────────────────────────────
 export const OFFICERS_MAP = {
-  'PM-KISAN-2024-001': { name: 'Shri Ramesh Kumar Verma', id: 'MP-AGR-2019-0431', department: 'Agriculture Department, MP', maxProcessingDays: 30, assignedDate: '2024-12-03' },
-  'PMAY-2024-002':     { name: 'Smt. Priya Sharma',       id: 'MP-HOU-2020-0218', department: 'Housing & Urban Dev, MP',   maxProcessingDays: 45, assignedDate: '2024-11-18' },
-  'AYUSH-2024-003':    { name: 'Dr. Anil Patel',          id: 'MP-HLT-2018-0872', department: 'Health Department, MP',     maxProcessingDays: 15, assignedDate: '2025-01-12' },
+  'PM-KISAN-2024-001': { name: 'Shri Ramesh Kumar Verma', id: 'MP-AGR-2019-0431', department: 'Agriculture Department, MP', maxProcessingDays: 30, assignedDate: '2024-12-03', rating: 4.2, casesResolved: 1205, onTimePercentage: 85 },
+  'PMAY-2024-002':     { name: 'Smt. Priya Sharma',       id: 'MP-HOU-2020-0218', department: 'Housing & Urban Dev, MP',   maxProcessingDays: 45, assignedDate: '2024-11-18', rating: 4.8, casesResolved: 840, onTimePercentage: 96 },
+  'AYUSH-2024-003':    { name: 'Dr. Anil Patel',          id: 'MP-HLT-2018-0872', department: 'Health Department, MP',     maxProcessingDays: 15, assignedDate: '2025-01-12', rating: 3.6, casesResolved: 450, onTimePercentage: 62 },
 }
 
 // ─── Timelines ─────────────────────────────────────────────────────────────────
@@ -90,14 +90,14 @@ export const STAGE_TIMELINES = {
   'PM-KISAN-2024-001': {
     applied:   { completedDate: '2024-12-01', expectedDate: '2024-12-01' },
     verified:  { completedDate: '2024-12-08', expectedDate: '2024-12-10' },
-    approved:  { completedDate: null,         expectedDate: '2024-12-20' },
-    disbursed: { completedDate: null,         expectedDate: '2024-12-31' },
+    approved:  { completedDate: '2024-12-20', expectedDate: '2024-12-20' },
+    disbursed: { completedDate: '2024-12-31', expectedDate: '2024-12-31' },
   },
   'PMAY-2024-002': {
     applied:   { completedDate: '2024-11-15', expectedDate: '2024-11-15' },
     verified:  { completedDate: '2024-11-25', expectedDate: '2024-11-28' },
     approved:  { completedDate: '2024-12-10', expectedDate: '2024-12-15' },
-    disbursed: { completedDate: null,         expectedDate: '2025-01-15' },
+    disbursed: { completedDate: '2025-01-15', expectedDate: '2025-01-15' },
   },
   'AYUSH-2024-003': {
     applied:   { completedDate: '2025-01-10', expectedDate: '2025-01-10' },
