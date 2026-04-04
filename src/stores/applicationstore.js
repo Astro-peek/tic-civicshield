@@ -1,5 +1,6 @@
 // src/stores/applicationStore.js
 import { SCHEMES as STATIC_SCHEMES } from '../data/mockdata';
+import SchemeFinder from "./components/SchemeFinder";
 
 let _schemes = [...STATIC_SCHEMES];
 const _listeners = new Set();
@@ -41,3 +42,22 @@ export const getDocuments = () => ({
 });
 
 export const getDynActiveStageIndex = (id) => 0; 
+
+
+
+
+
+{activeTab === 'ai' && (
+  <>
+    <SchemeFinder 
+      onApplicationSuccess={() => {
+        setActiveTab('schemes');
+        alert('Application submitted successfully! Tracking started.');
+      }} 
+      onDigiLocker={() => setShowDigiLocker(true)} 
+    />
+    {showDigiLocker && (
+      <DigiLockerModal onClose={() => setShowDigiLocker(false)} onSuccess={() => setShowDigiLocker(false)} />
+    )}
+  </>
+)}
