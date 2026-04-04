@@ -11,7 +11,41 @@ import WhatsAppShare from "./components/WhatsAppshare";
 import SchemeTracker from "./components/SchemeTracker";
 import EligibilityForm from "./components/EligibilityForm";
 import DigiLockerModal from "./components/DigiLockerModal"
+import SchemeFinder from "./components/schemefinder";
+import { useEffect } from "react";
+import { auth } from "./config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import AuthPage from "./components/AuthPage";
 
+export default function App() {
+  const [view, setView] = useState("landing");
+  const [user, setUser] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
+
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+      setAuthLoading(false);
+    });
+    return unsub;
+  }, []);
+
+  if (authLoading) return (
+    <div style={{
+      minHeight: "100vh", background: "#05080f",
+      display: "flex", alignItems: "center", justifyContent: "center",
+      color: "#4f8ef7", fontFamily: "sans-serif", fontSize: 14
+    }}>Loading...</div>
+  );
+
+  if (!user) return <AuthPage onLogin={() => setUser(auth.currentUser)} />;
+
+  return view === "landing" ? (
+    <LandingPage onLaunchApp={() => setView("dashboard")} />
+  ) : (
+    <Dashboard onHome={() => setView("landing")} />
+  );
+}
 
 const TAB_META = {
   schemes: { title: "My Schemes", subtitle: "Track all your applications" },
@@ -98,4 +132,19 @@ selectedScheme && (
       />
     )}
   </div>
+)}
+
+{activeTab === 'ai' && (
+  <>
+    <SchemeFinder 
+      onApplicationSuccess={() => {
+        setActiveTab('schemes');
+        alert('Application submitted successfully! Tracking started.');
+      }} 
+      onDigiLocker={() => setShowDigiLocker(true)} 
+    />
+    {showDigiLocker && (
+      <DigiLockerModal onClose={() => setShowDigiLocker(false)} onSuccess={() => setShowDigiLocker(false)} />
+    )}
+  </>
 )}
